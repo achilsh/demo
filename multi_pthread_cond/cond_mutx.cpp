@@ -1,5 +1,5 @@
 #include "cond_mutx.h"
-#include "mutex_def.h"
+#include <assert.h>
 
 namespace MUTX_DEF
 {
@@ -11,10 +11,12 @@ namespace MUTX_DEF
 
     ConVar::~ConVar()
     {
+        m_pMu = NULL;
     }
     void ConVar::Wait()
     {
         std::unique_lock<std::mutex> lock( m_pMu->m_Mutex, std::adopt_lock );
+        //std::unique_lock<std::mutex> lock( m_pMu->m_Mutex );
         m_cV.wait(lock);
         lock.release();
     }

@@ -1,14 +1,18 @@
+#ifndef _MUTEX_DEF_H_
+#define _MUTEX_DEF_H_
+
 /**
  * @file: mutex_def.h
  * @brief: 
- *    wrap c++11 std::mutex 
+ *    wrap self-def mutex with c++11 std::mutex:
+ *
  * @author:  wusheng Hu
  * @version: v0x01
  * @date: 2018-05-14
  */
 
-#ifndef _MUTEX_DEF_H_
-#define _MUTEX_DEF_H_
+#include <mutex>
+#include <iostream>
 
 namespace  MUTX_DEF 
 {
@@ -68,9 +72,10 @@ namespace  MUTX_DEF
       
       MutexLock& operator = ( const MutexLock& mtxLock )
       {
+          return *this;
       }
       
-      Def_Mutex* const m_pCntMutex;
+      Def_Mutex* m_pCntMutex;
     };
 }
 #endif
