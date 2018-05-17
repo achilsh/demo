@@ -14,6 +14,7 @@
 #include "mutex_def.h"
 #include <condition_variable>
 #include <thread>
+#include <deque>
 
 namespace MUTX_DEF
 {
@@ -41,13 +42,41 @@ namespace MUTX_DEF
       Def_Mutex* m_pMu;
     };
 
+    class BaseThread
+    {
+     public:
+      BaseThread();
+      virtual ~BaseThread();
+
+      bool StartThread();
+      void Join();
+      std::thread::id GetThreadId()
+      {
+          return m_Thread.get_id();
+      }
+      void ThreadWork();
+      virtual void ThreadWorkInner() = 0;
+
+      void SetQue(std::deque<int>* pMQ)
+      {
+          m_pQueMsg = pMQ;
+      }
+     protected:
+      bool WaitCondIsOk() { return false; }  
+      void ThreadGoOnWork() {} 
+      void SetReadCondOkNotify() {}
+     protected:
+      std::thread m_Thread;
+      std::deque<int>* m_pQueMsg;
+    };
+
     //--------------------------------------------//
     // T must implement interface: WaitCondIsOk(),
     // ThreadGoOnWork();
     // SetReadCondOkNotify();
     //--------------------------------------------//
     template<typename T>
-    class ThreadCondVar
+    class ThreadCondVar: public BaseThread
     {
      public:
       virtual ~ThreadCondVar();
@@ -75,11 +104,12 @@ namespace MUTX_DEF
       ThreadCondVar(): m_pMutx(NULL), m_pConVar(NULL) {}
     };
     
+
+    
     //------------ implement ----------------//
     template<typename T>
     ThreadCondVar<T>::~ThreadCondVar()
     {
-        //m_pThread = NULL;
         m_pMutx = NULL;
         m_pConVar = NULL;
     }
