@@ -4,6 +4,7 @@
 #include "mutex_def.h"
 #include <unistd.h>
 #include <vector>
+#include "LibStdCout.h"
 
 using namespace std;
 using namespace MUTX_DEF;
@@ -11,30 +12,33 @@ using namespace MUTX_DEF;
 int main()
 {
     struct GData gData;
+    gData.m_pConVar = new ConVar(&gData.mutexItem);
     
     ProduceThread* produceNode = new ProduceThread();
-    produceNode->SetConVar(&gData.condVarItem);
+    std::cout << "produce obj addr: " <<  produceNode << std::endl;
     produceNode->SetMutx(&gData.mutexItem);
+    produceNode->SetCondVar(gData.m_pConVar);
     produceNode->SetQue(&gData.dequeItem);
 
-    std::vector<TestThreadBase*> vConSum;
-    for (int i = 0; i < 3; i ++)
+    std::vector<ConsumeThread*> vConSum;
+    int n = 3;
+    for (int i = 0; i < n; i++)
     {
         ConsumeThread* pConsumeNode = new ConsumeThread();
-
-        pConsumeNode->SetConVar(&gData.condVarItem);
+        std::cout << "consumer obj addr: " << pConsumeNode << std::endl;
         pConsumeNode->SetMutx(&gData.mutexItem);
+        pConsumeNode->SetCondVar(gData.m_pConVar);
         pConsumeNode->SetQue(&gData.dequeItem);
 
         vConSum.push_back(pConsumeNode);
     }
 
-    for (int i = 0; i < 3; ++i)
+    for (int i = 0; i < n; ++i)
     {
         vConSum[i]->StartThread();
     }
     sleep(3);
-    std::cout << "main(): start produce thread" <<  std::endl;
+    DEBUG_LOG("start produce thread");
     //
     produceNode->StartThread();
     produceNode->Join();

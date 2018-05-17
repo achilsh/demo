@@ -23,19 +23,21 @@ struct GData
   GData() {  }
   virtual ~GData() {} 
 
-  ThreadCondVar<TestThreadBase> condVarItem;
   Def_Mutex mutexItem;
   std::deque<int> dequeItem;
+  ConVar *m_pConVar;
 };
 
 #include <thread>
 
-class TestThreadBase
+///// =========== produce thread define ======================//
+class ProduceThread: public ThreadCondVar<ProduceThread>
 {
  public:
-  TestThreadBase();
-  TestThreadBase( Def_Mutex* pMutx, ThreadCondVar<TestThreadBase>* pConnVar, std::deque<int>* pMQ);
-  virtual ~TestThreadBase();
+  ProduceThread();
+  virtual ~ProduceThread();
+  void ThreadWorkInner();
+
   bool StartThread();
   void Join();
   std::thread::id GetThreadId()
@@ -44,63 +46,52 @@ class TestThreadBase
   }
 
   void SetMutx(Def_Mutex* pMutx);
-  void SetConVar(ThreadCondVar<TestThreadBase>* pConVar);
+  void SetCondVar(ConVar *pConnVar);
   void SetQue(std::deque<int>* pMQ);
 
-  virtual bool WaitCondIsOk()
-  {
-      return true;
-  }
+  bool WaitCondIsOk();
 
-  virtual void ThreadGoOnWork()
-  {
-      return ;
-  }
-
-  virtual void SetReadCondOkNotify() = 0;
-
-  virtual void ThreadWorkInner()
-  {
-      return ;
-  }
- protected:
+  void ThreadGoOnWork();
+  void SetReadCondOkNotify() ;
+ public:
+ private:
   void ThreadWork();
-  Def_Mutex* m_pMutx;
-  ThreadCondVar<TestThreadBase>* m_pThreadConVar;
   std::deque<int>* m_pQueMsg;
   std::thread m_Thread;
 };
 
-///// =========== produce thread define ======================//
-class ProduceThread: public TestThreadBase
-{
- public:
-  ProduceThread();
-  ProduceThread(Def_Mutex* pMutx , ThreadCondVar<TestThreadBase>* pConnVar, std::deque<int>* pMQ );
-  virtual ~ProduceThread();
-  virtual void ThreadWorkInner();
-
- public:
-  virtual void SetReadCondOkNotify();
-};
-
 //// ================ comsume thrad define =========================//
-class ConsumeThread: public TestThreadBase
+class ConsumeThread: public ThreadCondVar<ConsumeThread>
 {
  public:
   ConsumeThread();
-  ConsumeThread(Def_Mutex* pMutx , ThreadCondVar<TestThreadBase>* pConnVar , std::deque<int>* pMQ );
   virtual  ~ConsumeThread();
 
-  virtual bool WaitCondIsOk();
-  virtual void ThreadGoOnWork();
-  virtual void ThreadWorkInner();
-  virtual void SetReadCondOkNotify() 
-  {
-  }
+  bool WaitCondIsOk();
+  void ThreadGoOnWork();
+  void ThreadWorkInner();
   void ConsumWork();
+
+  bool StartThread();
+  void Join();
+  std::thread::id GetThreadId()
+  {
+    return m_Thread.get_id();
+  }
+
+  void SetMutx(Def_Mutex* pMutx);
+  void SetCondVar(ConVar *pConnVar);
+  void SetQue(std::deque<int>* pMQ);
+
+  void SetReadCondOkNotify();
+ public:
+
  private:
   int m_IX;
+ private:
+  void ThreadWork();
+  std::deque<int>* m_pQueMsg;
+  std::thread m_Thread;
 };
 
 #endif

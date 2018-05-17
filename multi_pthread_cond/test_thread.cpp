@@ -2,73 +2,7 @@
 #include <unistd.h>
 #include "test_thread.hpp"
 
-TestThreadBase::TestThreadBase(Def_Mutex* pMutx , ThreadCondVar<TestThreadBase>* pConnVar, 
-                               std::deque<int>* pMQ)
-    :m_pMutx(pMutx), m_pThreadConVar(pConnVar), m_pQueMsg(pMQ)
-{
-    m_pThreadConVar = new ThreadCondVar<TestThreadBase>();
-    std::cout << "new thread cond var: " <<  m_pThreadConVar  << std::endl;
-}
-
-TestThreadBase::TestThreadBase()
-{
-
-}
-
-TestThreadBase::~TestThreadBase()
-{
-    if (m_pThreadConVar)
-    {
-        delete m_pThreadConVar;
-        m_pThreadConVar = NULL;
-    }
-}
-
-void TestThreadBase::SetMutx(Def_Mutex* pMutx)
-{
-    m_pMutx = pMutx;
-    m_pThreadConVar->SetMutx(m_pMutx);
-    m_pThreadConVar->SetThread(this);
-}
-
-void TestThreadBase::SetConVar(ThreadCondVar<TestThreadBase>* pConVar)
-{
-    m_pThreadConVar = pConVar;
-    m_pThreadConVar->SetThread(this);
-}
-
-void TestThreadBase::SetQue(std::deque<int>* pMQ)
-{
-    m_pQueMsg = pMQ;
-    m_pThreadConVar->SetThread(this);
-}
-
-//
-bool TestThreadBase::StartThread()
-{
-    m_Thread = std::thread(&TestThreadBase::ThreadWork,this);
-    return true;
-}
-
-void TestThreadBase::ThreadWork()
-{
-    std::cout << "thread id: " << std::this_thread::get_id() << std::endl;
-    while(1)
-    {
-        ThreadWorkInner();
-    }
-}
-
-void TestThreadBase::Join()
-{
-    m_Thread.join();
-}
-
 //======================= produce thread;
-ProduceThread::ProduceThread(Def_Mutex* pMutx, ThreadCondVar<TestThreadBase>* pConnVar, std::deque<int>* pMQ)
-    :TestThreadBase(pMutx, pConnVar, pMQ)
-{
-}
 ProduceThread::ProduceThread()
 {
 }
@@ -77,12 +11,59 @@ ProduceThread::~ProduceThread()
 {
 }
 
+bool ProduceThread::StartThread()
+{
+    std::cout << "PP: start thread addr: " << this << std::endl;
+    m_Thread = std::thread(&ProduceThread::ThreadWork, this);
+    return true;
+}
+
+void ProduceThread::ThreadWork()
+{
+    std::cout << "thread id: " << std::this_thread::get_id()
+        << ", thread func proc obj addr: " << this << std::endl;
+    while(1)
+    {
+        ThreadWorkInner();
+    }
+}
+
+void ProduceThread::Join()
+{
+    m_Thread.join();
+}
+
+void ProduceThread::SetMutx(Def_Mutex* pMutx)
+{
+    ThreadCondVar<ProduceThread>::SetMutx(pMutx);
+}
+
+void ProduceThread::SetCondVar(ConVar *pConnVar)
+{
+    ThreadCondVar<ProduceThread>::SetCondVar(pConnVar);
+}
+
+void ProduceThread::SetQue(std::deque<int>* pMQ)
+{
+    m_pQueMsg = pMQ;
+}
+
+bool ProduceThread::WaitCondIsOk()
+{
+    return true;
+}
+void ProduceThread::ThreadGoOnWork()
+{
+    return ;
+}
 void ProduceThread::ThreadWorkInner()
 {
     std::cout << "produce thread work, begin to send notify" <<  std::endl;
-    m_pThreadConVar->ThreadNotify();
+    //ThreadCondVar<TestThreadBase*>::ThreadNotify();
+    ThreadCondVar<ProduceThread>::ThreadNotify();
     std::cout << "produce thread work, send notify succ" <<  std::endl;
-    sleep(2);
+    sleep(1);
+    return ;
 }
 
 void ProduceThread::SetReadCondOkNotify()
@@ -93,19 +74,50 @@ void ProduceThread::SetReadCondOkNotify()
 }
 
 /// =================== consumer pthread implement =================== /////
-ConsumeThread::ConsumeThread(Def_Mutex* pMutx, ThreadCondVar<TestThreadBase>* pConnVar, std::deque<int>* pMQ)
-    :TestThreadBase(pMutx, pConnVar, pMQ), m_IX(0)
-{
-}
-
 ConsumeThread::ConsumeThread()
 {
 }
 
 ConsumeThread::~ConsumeThread()
 {
+
 }
 
+bool ConsumeThread::StartThread()
+{
+    std::cout << "CC: start thread addr: " << this << std::endl;
+    m_Thread = std::thread(&ConsumeThread::ThreadWork, this);
+    return true;
+}
+
+void ConsumeThread::ThreadWork()
+{
+    std::cout << "thread id: " << std::this_thread::get_id()
+        << ", thread func proc obj addr: " << this << std::endl;
+    while(1)
+    {
+        ThreadWorkInner();
+    }
+}
+void ConsumeThread::Join()
+{
+    m_Thread.join();
+}
+
+void ConsumeThread::SetMutx(Def_Mutex* pMutx)
+{
+    ThreadCondVar<ConsumeThread>::SetMutx(pMutx);
+}
+
+void ConsumeThread::SetCondVar(ConVar *pConnVar)
+{
+    ThreadCondVar<ConsumeThread>::SetCondVar(pConnVar);
+}
+
+void ConsumeThread::SetQue(std::deque<int>* pMQ)
+{
+    m_pQueMsg = pMQ;
+}
 bool ConsumeThread::WaitCondIsOk()
 {
     if (m_pQueMsg->empty())
@@ -126,15 +138,16 @@ void ConsumeThread::ThreadGoOnWork()
         return ;
     }
     m_IX = m_pQueMsg->back();
+    int sz = m_pQueMsg->size();
     m_pQueMsg->pop_back();
-    std::cout << "get node from queue tail, node: " << m_IX << std::endl;
+    std::cout << "queue size: " << sz << ", get node from queue tail, node: " << m_IX << std::endl;
 }
 void ConsumeThread::ThreadWorkInner()
 {
-    m_pThreadConVar->ThreadWait();
+    ThreadWait();
     ConsumWork();
-    sleep(1);
-    std::cout  << " consume sleep 1 " << std::endl;
+    sleep(10);
+    std::cout  << " consume sleep 10 " << std::endl;
 
 }
 
