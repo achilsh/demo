@@ -41,8 +41,8 @@ int main()
     DEBUG_LOG("start produce thread");
     //
     produceNode->StartThread();
-    produceNode->Join();
     
+    produceNode->Join();
     for (int i = 0; i < 3; ++i)
     {
         vConSum[i]->Join();

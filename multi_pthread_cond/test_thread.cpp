@@ -11,55 +11,9 @@ ProduceThread::~ProduceThread()
 {
 }
 
-bool ProduceThread::StartThread()
-{
-    std::cout << "PP: start thread addr: " << this << std::endl;
-    m_Thread = std::thread(&ProduceThread::ThreadWork, this);
-    return true;
-}
-
-void ProduceThread::ThreadWork()
-{
-    std::cout << "thread id: " << std::this_thread::get_id()
-        << ", thread func proc obj addr: " << this << std::endl;
-    while(1)
-    {
-        ThreadWorkInner();
-    }
-}
-
-void ProduceThread::Join()
-{
-    m_Thread.join();
-}
-
-void ProduceThread::SetMutx(Def_Mutex* pMutx)
-{
-    ThreadCondVar<ProduceThread>::SetMutx(pMutx);
-}
-
-void ProduceThread::SetCondVar(ConVar *pConnVar)
-{
-    ThreadCondVar<ProduceThread>::SetCondVar(pConnVar);
-}
-
-void ProduceThread::SetQue(std::deque<int>* pMQ)
-{
-    m_pQueMsg = pMQ;
-}
-
-bool ProduceThread::WaitCondIsOk()
-{
-    return true;
-}
-void ProduceThread::ThreadGoOnWork()
-{
-    return ;
-}
 void ProduceThread::ThreadWorkInner()
 {
     std::cout << "produce thread work, begin to send notify" <<  std::endl;
-    //ThreadCondVar<TestThreadBase*>::ThreadNotify();
     ThreadCondVar<ProduceThread>::ThreadNotify();
     std::cout << "produce thread work, send notify succ" <<  std::endl;
     sleep(1);
@@ -83,41 +37,6 @@ ConsumeThread::~ConsumeThread()
 
 }
 
-bool ConsumeThread::StartThread()
-{
-    std::cout << "CC: start thread addr: " << this << std::endl;
-    m_Thread = std::thread(&ConsumeThread::ThreadWork, this);
-    return true;
-}
-
-void ConsumeThread::ThreadWork()
-{
-    std::cout << "thread id: " << std::this_thread::get_id()
-        << ", thread func proc obj addr: " << this << std::endl;
-    while(1)
-    {
-        ThreadWorkInner();
-    }
-}
-void ConsumeThread::Join()
-{
-    m_Thread.join();
-}
-
-void ConsumeThread::SetMutx(Def_Mutex* pMutx)
-{
-    ThreadCondVar<ConsumeThread>::SetMutx(pMutx);
-}
-
-void ConsumeThread::SetCondVar(ConVar *pConnVar)
-{
-    ThreadCondVar<ConsumeThread>::SetCondVar(pConnVar);
-}
-
-void ConsumeThread::SetQue(std::deque<int>* pMQ)
-{
-    m_pQueMsg = pMQ;
-}
 bool ConsumeThread::WaitCondIsOk()
 {
     if (m_pQueMsg->empty())

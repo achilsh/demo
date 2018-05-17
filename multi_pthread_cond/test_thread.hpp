@@ -37,27 +37,7 @@ class ProduceThread: public ThreadCondVar<ProduceThread>
   ProduceThread();
   virtual ~ProduceThread();
   void ThreadWorkInner();
-
-  bool StartThread();
-  void Join();
-  std::thread::id GetThreadId()
-  {
-    return m_Thread.get_id();
-  }
-
-  void SetMutx(Def_Mutex* pMutx);
-  void SetCondVar(ConVar *pConnVar);
-  void SetQue(std::deque<int>* pMQ);
-
-  bool WaitCondIsOk();
-
-  void ThreadGoOnWork();
   void SetReadCondOkNotify() ;
- public:
- private:
-  void ThreadWork();
-  std::deque<int>* m_pQueMsg;
-  std::thread m_Thread;
 };
 
 //// ================ comsume thrad define =========================//
@@ -72,26 +52,8 @@ class ConsumeThread: public ThreadCondVar<ConsumeThread>
   void ThreadWorkInner();
   void ConsumWork();
 
-  bool StartThread();
-  void Join();
-  std::thread::id GetThreadId()
-  {
-    return m_Thread.get_id();
-  }
-
-  void SetMutx(Def_Mutex* pMutx);
-  void SetCondVar(ConVar *pConnVar);
-  void SetQue(std::deque<int>* pMQ);
-
-  void SetReadCondOkNotify();
- public:
-
  private:
   int m_IX;
- private:
-  void ThreadWork();
-  std::deque<int>* m_pQueMsg;
-  std::thread m_Thread;
 };
 
 #endif
