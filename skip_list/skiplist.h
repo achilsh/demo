@@ -133,7 +133,7 @@ namespace NS_SKIPLIST
     template<typename K, typename V, typename Comparator>
     SkipList<K,V, Comparator>::~SkipList() 
     {
-        //FreeList();
+        FreeList();
     }
 
     template<typename K, typename V, typename Comparator>
