@@ -10,3 +10,12 @@ vim  ${data_file} << VIM  > /dev/null 2>&1
 :4,4s/789/10000/
 :wq
 VIM
+
+#or patten-match work
+# %s/ / /
+# %sOther  Other Other, because of / is included in contain,but / is default delimiter
+vim ${data_file} << VIM > /dev/null 2>&1
+:%s/ff/gg/
+:%s:/dev/info:xxxxx:
+:wq
+VIM
