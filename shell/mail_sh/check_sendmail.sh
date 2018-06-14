@@ -65,7 +65,7 @@ function SendMail
     local src_mail_pwd="hwshtongxin123"
     send_cmd_msg="${cmd_send_mail} -s ${mail_domain_name} -f ${src_mail_addr} -t ${dst_mail_addr}"
     send_cmd_msg="${send_cmd_msg} -u ${str_subject_mail} -m  -o message-file=${file_msg}  -xu ${src_mail_name} -xp ${src_mail_pwd} "
-    `${send_cmd_msg}`
+    ${send_cmd_msg}
     echo ${send_cmd_msg}
 }
 
