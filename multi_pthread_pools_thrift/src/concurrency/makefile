@@ -51,5 +51,5 @@ Ls: $(OBJS)
 	#$(CC) $(INC) $(CFLAG) -c -o $@ $< 
 clean:
 	rm -f $(OBJS)
-	rm -f $(Ls)
+	rm -f libMultiThreadPools.*
   

@@ -1,3 +1,4 @@
 *.o
 tags
-libMultiThreadPools.*
+libMultiThreadPools.so
+libMultiThreadPools.a
