@@ -32,9 +32,8 @@
 #include <string.h>
 
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS
+{
 
 // Enable this to turn on mutex contention profiling support
 // #define THRIFT_PTHREAD_MUTEX_CONTENTION_PROFILING
@@ -375,6 +374,5 @@ void NoStarveReadWriteMutex::acquireWrite() const {
   writerWaiting_ = false;
   mutex_.unlock();
 }
-}
-}
-} // apache::thrift::concurrency
+
+} //namespace

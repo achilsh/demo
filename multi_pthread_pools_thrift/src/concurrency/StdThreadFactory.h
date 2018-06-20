@@ -24,9 +24,7 @@
 
 #include "stdcxx.h" 
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS {
 
 /**
  * A thread factory to create std::threads.
@@ -54,8 +52,7 @@ public:
   Thread::id_t getCurrentThreadId() const;
 };
 
-}
-}
-} // apache::thrift::concurrency
+
+} // namespace
 
 #endif // #ifndef _THRIFT_CONCURRENCY_STDTHREADFACTORY_H_

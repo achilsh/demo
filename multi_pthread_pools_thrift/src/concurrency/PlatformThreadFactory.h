@@ -21,9 +21,7 @@
 #define _THRIFT_CONCURRENCY_PLATFORMTHREADFACTORY_H_ 1
 
 // clang-format off
-//#include <thrift/thrift-config.h>
 #if USE_BOOST_THREAD
-//#  include <thrift/concurrency/BoostThreadFactory.h>
 #elif USE_STD_THREAD
 #  include "StdThreadFactory.h"
 #else
@@ -31,9 +29,7 @@
 #endif
 // clang-format on
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS {
 
 // clang-format off
 #if USE_BOOST_THREAD
@@ -45,8 +41,7 @@ namespace concurrency {
 #endif
 // clang-format on
 
-}
-}
-} // apache::thrift::concurrency
+
+} // namespace 
 
 #endif // #ifndef _THRIFT_CONCURRENCY_PLATFORMTHREADFACTORY_H_

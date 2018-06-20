@@ -30,9 +30,8 @@
 #include <deque>
 #include <set>
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS
+{
 
 using stdcxx::shared_ptr;
 using stdcxx::dynamic_pointer_cast;
@@ -581,6 +580,5 @@ shared_ptr<ThreadManager> ThreadManager::newSimpleThreadManager(size_t count,
                                                                 size_t pendingTaskCountMax) {
   return shared_ptr<ThreadManager>(new SimpleThreadManager(count, pendingTaskCountMax));
 }
-}
-}
-} // apache::thrift::concurrency
+
+} //  namespace

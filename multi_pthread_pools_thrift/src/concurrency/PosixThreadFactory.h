@@ -21,12 +21,9 @@
 #define _THRIFT_CONCURRENCY_POSIXTHREADFACTORY_H_ 1
 
 #include "Thread.h"
-
 #include "stdcxx.h"
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS {
 
 /**
  * A thread factory to create posix threads
@@ -122,8 +119,7 @@ private:
   PRIORITY priority_;
   int stackSize_;
 };
-}
-}
-} // apache::thrift::concurrency
+
+} // namespace
 
 #endif // #ifndef _THRIFT_CONCURRENCY_POSIXTHREADFACTORY_H_

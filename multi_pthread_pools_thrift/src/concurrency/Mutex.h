@@ -21,12 +21,10 @@
 #define _THRIFT_CONCURRENCY_MUTEX_H_ 1
 
 #include "stdcxx.h"
-//#include <boost/noncopyable.hpp>
 #include <stdint.h>
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS
+{
 
 #ifndef THRIFT_NO_CONTENTION_PROFILING
 
@@ -186,8 +184,7 @@ private:
 private:
   const ReadWriteMutex& rw_mutex_;
 };
-}
-}
-} // apache::thrift::concurrency
+
+} // namespace
 
 #endif // #ifndef _THRIFT_CONCURRENCY_MUTEX_H_

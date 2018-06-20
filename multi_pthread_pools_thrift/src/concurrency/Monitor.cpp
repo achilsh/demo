@@ -29,13 +29,11 @@
 
 #include <pthread.h>
 
-namespace apache {
-namespace thrift {
+namespace THREAD_POOLS
+{
 
 using stdcxx::scoped_ptr;
 using stdcxx::shared_ptr;
-
-namespace concurrency {
 
 /**
  * Monitor implementation using the POSIX pthread library
@@ -218,6 +216,6 @@ void Monitor::notify() const {
 void Monitor::notifyAll() const {
   impl_->notifyAll();
 }
-}
-}
-} // apache::thrift::concurrency
+
+
+} // namespace 

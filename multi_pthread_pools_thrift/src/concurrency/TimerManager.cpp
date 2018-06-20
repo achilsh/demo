@@ -25,9 +25,8 @@
 #include <iostream>
 #include <set>
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS
+{
 
 using stdcxx::shared_ptr;
 using stdcxx::weak_ptr;
@@ -342,6 +341,6 @@ void TimerManager::remove(Timer handle) {
 TimerManager::STATE TimerManager::state() const {
   return state_;
 }
-}
-}
-} // apache::thrift::concurrency
+
+
+} // namespace 

@@ -34,9 +34,8 @@
 
 #include "stdcxx.h"
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS
+{
 
 /**
  * The POSIX thread class.
@@ -331,6 +330,4 @@ Thread::id_t PosixThreadFactory::getCurrentThreadId() const {
 #endif // _WIN32
 }
 
-}
-}
-} // apache::thrift::concurrency
+} // namespace 

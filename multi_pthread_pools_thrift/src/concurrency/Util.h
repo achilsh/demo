@@ -31,9 +31,8 @@
 
 #include "PlatformSocket.h"
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS
+{
 
 /**
  * Utility methods
@@ -144,8 +143,8 @@ public:
    */
   static int64_t currentTimeUsec() { return currentTimeTicks(US_PER_S); }
 };
-}
-}
-} // apache::thrift::concurrency
+
+
+} // namespace 
 
 #endif // #ifndef _THRIFT_CONCURRENCY_UTIL_H_

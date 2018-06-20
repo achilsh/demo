@@ -28,9 +28,8 @@
 #include "Mutex.h"
 #include "PlatformSocket.h"
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS
+{
 
 /**
  * A monitor is a combination mutex and condition-event.  Waiting and
@@ -128,8 +127,8 @@ public:
 private:
   Guard g;
 };
-}
-}
-} // apache::thrift::concurrency
+
+
+} // namespace  
 
 #endif // #ifndef _THRIFT_CONCURRENCY_MONITOR_H_

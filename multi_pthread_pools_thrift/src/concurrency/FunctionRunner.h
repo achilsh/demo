@@ -23,9 +23,7 @@
 #include "Thread.h"
 #include "stdcxx.h"
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS {
 
 /**
  * Convenient implementation of Runnable that will execute arbitrary callbacks.
@@ -111,8 +109,7 @@ private:
   BoolFunc repFunc_;
   int intervalMs_;
 };
-}
-}
-} // apache::thrift::concurrency
+
+} // namespace  
 
 #endif // #ifndef _THRIFT_CONCURRENCY_FUNCTION_RUNNER_H

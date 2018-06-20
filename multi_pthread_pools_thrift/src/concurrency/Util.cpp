@@ -26,9 +26,8 @@
 #include <sys/time.h>
 #endif
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS
+{
 
 int64_t Util::currentTimeTicks(int64_t ticksPerSec) {
   int64_t result;
@@ -39,6 +38,6 @@ int64_t Util::currentTimeTicks(int64_t ticksPerSec) {
   toTicks(result, now, ticksPerSec);
   return result;
 }
-}
-}
-} // apache::thrift::concurrency
+
+
+} // namespace

@@ -12,9 +12,8 @@
 
 #define THRIFT_UNUSED_VARIABLE(x) ((void)(x))
 
-namespace apache {
-namespace thrift {
-
+namespace THREAD_POOLS
+{
 
 class TException : public std::exception 
 {
@@ -65,5 +64,5 @@ TDelayedException* TDelayedException::delayException(const E& e) {
   return new TExceptionWrapper<E>(e);
 }
 
-} }  
+}
 #endif

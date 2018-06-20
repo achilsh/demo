@@ -29,9 +29,7 @@
 #include <cassert>
 #include <thread>
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS {
 
 /**
  * The C++11 thread class.
@@ -146,8 +144,7 @@ stdcxx::shared_ptr<Thread> StdThreadFactory::newThread(stdcxx::shared_ptr<Runnab
 Thread::id_t StdThreadFactory::getCurrentThreadId() const {
   return std::this_thread::get_id();
 }
-}
-}
-} // apache::thrift::concurrency
+
+} // namespace
 
 #endif // USE_STD_THREAD

@@ -26,9 +26,8 @@
 #include <chrono>
 #include <mutex>
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS
+{
 
 /**
  * Implementation of Mutex class using C++11 std::timed_mutex
@@ -69,6 +68,4 @@ void Mutex::DEFAULT_INITIALIZER(void* arg) {
 }
 #endif
 
-}
-}
-} // apache::thrift::concurrency
+} //namespace

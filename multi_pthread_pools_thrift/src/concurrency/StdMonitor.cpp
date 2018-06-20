@@ -17,7 +17,6 @@
  * under the License.
  */
 
-//#include <thrift/thrift-config.h>
 
 #include "Monitor.h"
 #include "Exception.h"
@@ -30,9 +29,7 @@
 #include <thread>
 #include <mutex>
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS {
 
 /**
  * Monitor implementation using the std thread library
@@ -208,6 +205,5 @@ void Monitor::notify() const {
 void Monitor::notifyAll() const {
   const_cast<Monitor::Impl*>(impl_)->notifyAll();
 }
-}
-}
-} // apache::thrift::concurrency
+
+} // namespace

@@ -23,10 +23,9 @@
 #include <stdint.h>
 #include "stdcxx.h"
 
-//#include <thrift/thrift-config.h>
 
 #if USE_BOOST_THREAD
-//#include <boost/thread.hpp>
+//
 #elif USE_STD_THREAD
 #include <thread>
 #else
@@ -35,9 +34,7 @@
 #endif
 #endif
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS {
 
 class Thread;
 
@@ -170,8 +167,7 @@ private:
   bool detached_;
 };
 
-}
-}
-} // apache::thrift::concurrency
+
+} // namespace
 
 #endif // #ifndef _THRIFT_CONCURRENCY_THREAD_H_

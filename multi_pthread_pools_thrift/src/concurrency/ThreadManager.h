@@ -24,9 +24,8 @@
 #include "Thread.h"
 #include "stdcxx.h"
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS 
+{
 
 /**
  * Thread Pool Manager and related classes
@@ -58,7 +57,7 @@ protected:
   ThreadManager() {}
 
 public:
-  typedef apache::thrift::stdcxx::function<void(stdcxx::shared_ptr<Runnable>)> ExpireCallback;
+  typedef THREAD_POOLS::stdcxx::function<void(stdcxx::shared_ptr<Runnable>)> ExpireCallback;
 
   virtual ~ThreadManager() {}
 
@@ -206,8 +205,7 @@ public:
 
   class Impl;
 };
-}
-}
-} // apache::thrift::concurrency
+
+} // namespace 
 
 #endif // #ifndef _THRIFT_CONCURRENCY_THREADMANAGER_H_

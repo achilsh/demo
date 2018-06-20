@@ -23,42 +23,39 @@
 #include <exception>
 #include "Common.h"
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS {
 
-class NoSuchTaskException : public apache::thrift::TException {};
+class NoSuchTaskException : public THREAD_POOLS::TException {};
 
-class UncancellableTaskException : public apache::thrift::TException {};
+class UncancellableTaskException : public THREAD_POOLS::TException {};
 
-class InvalidArgumentException : public apache::thrift::TException {};
+class InvalidArgumentException : public THREAD_POOLS::TException {};
 
-class IllegalStateException : public apache::thrift::TException {
+class IllegalStateException : public THREAD_POOLS::TException {
 public:
   IllegalStateException() {}
   IllegalStateException(const std::string& message) : TException(message) {}
 };
 
-class TimedOutException : public apache::thrift::TException {
+class TimedOutException : public THREAD_POOLS::TException {
 public:
   TimedOutException() : TException("TimedOutException"){};
   TimedOutException(const std::string& message) : TException(message) {}
 };
 
-class TooManyPendingTasksException : public apache::thrift::TException {
+class TooManyPendingTasksException : public THREAD_POOLS::TException {
 public:
   TooManyPendingTasksException() : TException("TooManyPendingTasksException"){};
   TooManyPendingTasksException(const std::string& message) : TException(message) {}
 };
 
-class SystemResourceException : public apache::thrift::TException {
+class SystemResourceException : public THREAD_POOLS::TException {
 public:
   SystemResourceException() {}
 
   SystemResourceException(const std::string& message) : TException(message) {}
 };
-}
-}
-} // apache::thrift::concurrency
+
+} // namespace
 
 #endif // #ifndef _THRIFT_CONCURRENCY_EXCEPTION_H_

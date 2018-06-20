@@ -38,7 +38,7 @@
 
 #if _THRIFT_FUNCTIONAL_TR1_
 
-  namespace apache { namespace thrift { namespace stdcxx {
+  namespace THREAD_POOLS { namespace stdcxx {
 
     using ::std::tr1::bind;
     using ::std::tr1::function;
@@ -54,13 +54,13 @@
       using ::std::tr1::placeholders::_8;
       using ::std::tr1::placeholders::_9;
     } // apache::thrift::stdcxx::placeholders
-  }}} // apache::thrift::stdcxx
+  }} // THREAD_POOLS::stdcxx
 
 #else
 
   #include <functional>
 
-  namespace apache { namespace thrift { namespace stdcxx {
+  namespace THREAD_POOLS { namespace stdcxx {
     using ::std::bind;
     using ::std::function;
 
@@ -75,7 +75,7 @@
       using ::std::placeholders::_8;
       using ::std::placeholders::_9;
     } // apache::thrift::stdcxx::placeholders
-  }}} // apache::thrift::stdcxx
+  }} // THREAD_POOLS::stdcxx
 
 #endif
 
@@ -96,7 +96,7 @@
 #include <memory>
 #endif
 
-namespace apache { namespace thrift { namespace stdcxx {
+namespace THREAD_POOLS { namespace stdcxx {
 
 #if defined(BOOST_NO_CXX11_SMART_PTR) || (defined(_MSC_VER) && _MSC_VER < 1800) || defined(FORCE_BOOST_SMART_PTR)
 
@@ -122,6 +122,6 @@ namespace apache { namespace thrift { namespace stdcxx {
 
 #endif
 
-}}} // apache::thrift::stdcxx
+}} // THREAD_POOLS::stdcxx
 
 #endif // #ifndef _THRIFT_STDCXX_H_

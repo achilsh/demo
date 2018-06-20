@@ -28,9 +28,8 @@
 #include <map>
 #include <time.h>
 
-namespace apache {
-namespace thrift {
-namespace concurrency {
+namespace THREAD_POOLS
+{
 
 /**
  * Timer Manager
@@ -140,8 +139,7 @@ private:
   typedef std::multimap<int64_t, stdcxx::shared_ptr<TimerManager::Task> >::iterator task_iterator;
   typedef std::pair<task_iterator, task_iterator> task_range;
 };
-}
-}
-} // apache::thrift::concurrency
+
+} // 
 
 #endif // #ifndef _THRIFT_CONCURRENCY_TIMERMANAGER_H_
