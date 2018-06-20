@@ -1,0 +1,666 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ABORT_ONFAIL	Mutex.cpp	115;"	d	file:
+ADAPTIVE_INITIALIZER	Mutex.cpp	/^void Mutex::ADAPTIVE_INITIALIZER(void* arg) {$/;"	f	class:apache::thrift::concurrency::Mutex
+AI_ADDRCONFIG	PlatformSocket.h	85;"	d
+ARCH	makefile	/^ARCH:=$(shell uname -m)$/;"	m
+ARCH32	makefile	/^ARCH32:=i686$/;"	m
+ARCH64	makefile	/^ARCH64:=x86_64$/;"	m
+BoolFunc	FunctionRunner.h	/^  typedef stdcxx::function<bool()> BoolFunc;$/;"	t	class:apache::thrift::concurrency::FunctionRunner
+CANCELLED	TimerManager.cpp	/^  enum STATE { WAITING, EXECUTING, CANCELLED, COMPLETE };$/;"	e	enum:apache::thrift::concurrency::TimerManager::Task::STATE	file:
+CC	makefile	/^CC = $(shell command -v $(CCACHE_B) >\/dev\/null 2>&1 && echo "$(CCACHE_B) gcc" || echo "gcc")$/;"	m
+CCACHE_B	makefile	/^CCACHE_B=.\/ccache$/;"	m
+CC_SRCS	makefile	/^CC_SRCS = $(foreach dir, $(DIRS), $(wildcard $(dir)\/*.cc))$/;"	m
+CFLAG	makefile	/^CFLAG = -Wall -Wno-format -g -O2 -fPIC $/;"	m
+COMPLETE	ThreadManager.cpp	/^  enum STATE { WAITING, EXECUTING, TIMEDOUT, COMPLETE };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::Task::STATE	file:
+COMPLETE	TimerManager.cpp	/^  enum STATE { WAITING, EXECUTING, CANCELLED, COMPLETE };$/;"	e	enum:apache::thrift::concurrency::TimerManager::Task::STATE	file:
+CPP_SRCS	makefile	/^CPP_SRCS = $(foreach dir, $(DIRS), $(wildcard $(dir)\/*.cpp))$/;"	m
+CXX	makefile	/^CXX = $(shell command -v $(CCACHE_B) >\/dev\/null 2>&1 && echo "$(CCACHE_B) g++" || echo "g++")$/;"	m
+CXXFLAG	makefile	/^CXXFLAG = -Wall -Wno-format -g -O2 -fPIC -std=c++11 $/;"	m
+C_SRCS	makefile	/^C_SRCS = $(foreach dir, $(DIRS), $(wildcard $(dir)\/*.c))$/;"	m
+DECREMENT	PosixThreadFactory.h	/^    DECREMENT = 8$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::PRIORITY
+DEFAULT_INITIALIZER	Mutex.cpp	/^void Mutex::DEFAULT_INITIALIZER(void* arg) {$/;"	f	class:apache::thrift::concurrency::Mutex
+DEFAULT_INITIALIZER	StdMutex.cpp	/^void Mutex::DEFAULT_INITIALIZER(void* arg) {$/;"	f	class:apache::thrift::concurrency::Mutex
+DIRS	makefile	/^DIRS := $(SUB_DIRS)$/;"	m
+Dispatcher	TimerManager.cpp	/^  Dispatcher(TimerManager* manager) : manager_(manager) {}$/;"	f	class:apache::thrift::concurrency::TimerManager::Dispatcher
+Dispatcher	TimerManager.cpp	/^class TimerManager::Dispatcher : public Runnable {$/;"	c	class:apache::thrift::concurrency::TimerManager	file:
+EINTR_LOOP	Mutex.cpp	114;"	d	file:
+ERRORCHECK_INITIALIZER	Mutex.cpp	/^void Mutex::ERRORCHECK_INITIALIZER(void* arg) {$/;"	f	class:apache::thrift::concurrency::Mutex
+EXECUTING	ThreadManager.cpp	/^  enum STATE { WAITING, EXECUTING, TIMEDOUT, COMPLETE };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::Task::STATE	file:
+EXECUTING	TimerManager.cpp	/^  enum STATE { WAITING, EXECUTING, CANCELLED, COMPLETE };$/;"	e	enum:apache::thrift::concurrency::TimerManager::Task::STATE	file:
+ExpireCallback	ThreadManager.h	/^  typedef apache::thrift::stdcxx::function<void(stdcxx::shared_ptr<Runnable>)> ExpireCallback;$/;"	t	class:apache::thrift::concurrency::ThreadManager
+FIFO	PosixThreadFactory.h	/^  enum POLICY { OTHER, FIFO, ROUND_ROBIN };$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::POLICY
+FunctionRunner	FunctionRunner.h	/^  FunctionRunner(PthreadFuncPtr func, void* arg)$/;"	f	class:apache::thrift::concurrency::FunctionRunner
+FunctionRunner	FunctionRunner.h	/^  FunctionRunner(const BoolFunc& cob, int intervalMs) : repFunc_(cob), intervalMs_(intervalMs) {}$/;"	f	class:apache::thrift::concurrency::FunctionRunner
+FunctionRunner	FunctionRunner.h	/^  FunctionRunner(const VoidFunc& cob) : func_(cob), intervalMs_(-1) {}$/;"	f	class:apache::thrift::concurrency::FunctionRunner
+FunctionRunner	FunctionRunner.h	/^class FunctionRunner : public Runnable {$/;"	c	namespace:apache::thrift::concurrency
+Guard	Mutex.h	/^  Guard(const Guard& item) {}$/;"	f	class:apache::thrift::concurrency::Guard
+Guard	Mutex.h	/^  Guard(const Mutex& value, int64_t timeout = 0) : mutex_(&value) {$/;"	f	class:apache::thrift::concurrency::Guard
+Guard	Mutex.h	/^class Guard {$/;"	c	namespace:apache::thrift::concurrency
+HIGH	PosixThreadFactory.h	/^    HIGH = 4,$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::PRIORITY
+HIGHER	PosixThreadFactory.h	/^    HIGHER = 5,$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::PRIORITY
+HIGHEST	PosixThreadFactory.h	/^    HIGHEST = 6,$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::PRIORITY
+INC	makefile	/^INC := $(INC) \\$/;"	m
+INCREMENT	PosixThreadFactory.h	/^    INCREMENT = 7,$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::PRIORITY
+IllegalStateException	Exception.h	/^  IllegalStateException() {}$/;"	f	class:apache::thrift::concurrency::IllegalStateException
+IllegalStateException	Exception.h	/^  IllegalStateException(const std::string& message) : TException(message) {}$/;"	f	class:apache::thrift::concurrency::IllegalStateException
+IllegalStateException	Exception.h	/^class IllegalStateException : public apache::thrift::TException {$/;"	c	namespace:apache::thrift::concurrency
+Impl	Monitor.cpp	/^  Impl() : ownedMutex_(new Mutex()), mutex_(NULL), condInitialized_(false) {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+Impl	Monitor.cpp	/^  Impl(Monitor* monitor) : mutex_(NULL), condInitialized_(false) { init(&(monitor->mutex())); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+Impl	Monitor.cpp	/^  Impl(Mutex* mutex) : mutex_(NULL), condInitialized_(false) { init(mutex); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+Impl	Monitor.cpp	/^class Monitor::Impl {$/;"	c	class:apache::thrift::concurrency::Monitor	file:
+Impl	StdMonitor.cpp	/^  Impl() : ownedMutex_(new Mutex()), conditionVariable_(), mutex_(NULL) { init(ownedMutex_.get()); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+Impl	StdMonitor.cpp	/^  Impl(Monitor* monitor) : ownedMutex_(), conditionVariable_(), mutex_(NULL) {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+Impl	StdMonitor.cpp	/^  Impl(Mutex* mutex) : ownedMutex_(), conditionVariable_(), mutex_(NULL) { init(mutex); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+Impl	StdMonitor.cpp	/^class Monitor::Impl {$/;"	c	class:apache::thrift::concurrency::Monitor	file:
+Impl	ThreadManager.cpp	/^  Impl()$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+Impl	ThreadManager.cpp	/^class ThreadManager::Impl : public ThreadManager {$/;"	c	class:apache::thrift::concurrency::ThreadManager	file:
+Initializer	Mutex.h	/^  typedef void (*Initializer)(void*);$/;"	t	class:apache::thrift::concurrency::Mutex
+InvalidArgumentException	Exception.h	/^class InvalidArgumentException : public apache::thrift::TException {};$/;"	c	namespace:apache::thrift::concurrency
+JOINING	ThreadManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, JOINING, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::STATE
+LDFLAGS	makefile	/^LDFLAGS := $(LDFLAGS) -D_LINUX_OS_ \\$/;"	m
+LIB3RD_PATH	makefile	/^LIB3RD_PATH = .$/;"	m
+LOSS_PATH	makefile	/^LOSS_PATH = .$/;"	m
+LOW	PosixThreadFactory.h	/^    LOW = 2,$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::PRIORITY
+LOWER	PosixThreadFactory.h	/^    LOWER = 1,$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::PRIORITY
+LOWEST	PosixThreadFactory.h	/^    LOWEST = 0,$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::PRIORITY
+MB	PosixThreadFactory.cpp	/^  static const int MB = 1024 * 1024;$/;"	m	class:apache::thrift::concurrency::PthreadThread	file:
+MS_PER_S	Util.h	/^  static const int64_t MS_PER_S = 1000LL;$/;"	m	class:apache::thrift::concurrency::Util
+Monitor	Monitor.cpp	/^Monitor::Monitor() : impl_(new Monitor::Impl()) {$/;"	f	class:apache::thrift::concurrency::Monitor
+Monitor	Monitor.cpp	/^Monitor::Monitor(Monitor* monitor) : impl_(new Monitor::Impl(monitor)) {$/;"	f	class:apache::thrift::concurrency::Monitor
+Monitor	Monitor.cpp	/^Monitor::Monitor(Mutex* mutex) : impl_(new Monitor::Impl(mutex)) {$/;"	f	class:apache::thrift::concurrency::Monitor
+Monitor	Monitor.h	/^  Monitor(const Monitor& item) {}$/;"	f	class:apache::thrift::concurrency::Monitor
+Monitor	Monitor.h	/^class Monitor  {$/;"	c	namespace:apache::thrift::concurrency
+Monitor	StdMonitor.cpp	/^Monitor::Monitor() : impl_(new Monitor::Impl()) {$/;"	f	class:apache::thrift::concurrency::Monitor
+Monitor	StdMonitor.cpp	/^Monitor::Monitor(Monitor* monitor) : impl_(new Monitor::Impl(monitor)) {$/;"	f	class:apache::thrift::concurrency::Monitor
+Monitor	StdMonitor.cpp	/^Monitor::Monitor(Mutex* mutex) : impl_(new Monitor::Impl(mutex)) {$/;"	f	class:apache::thrift::concurrency::Monitor
+Mutex	Mutex.cpp	/^Mutex::Mutex(Initializer init) : impl_(new Mutex::impl(init)) {$/;"	f	class:apache::thrift::concurrency::Mutex
+Mutex	Mutex.h	/^class Mutex {$/;"	c	namespace:apache::thrift::concurrency
+Mutex	StdMutex.cpp	/^Mutex::Mutex(Initializer init) : impl_(new Mutex::impl()) {$/;"	f	class:apache::thrift::concurrency::Mutex
+MutexWaitCallback	Mutex.h	/^typedef void (*MutexWaitCallback)(const void* id, int64_t waitTimeMicros);$/;"	t	namespace:apache::thrift::concurrency
+NORMAL	PosixThreadFactory.h	/^    NORMAL = 3,$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::PRIORITY
+NS_PER_MS	Util.h	/^  static const int64_t NS_PER_MS = NS_PER_S \/ MS_PER_S;$/;"	m	class:apache::thrift::concurrency::Util
+NS_PER_S	Util.h	/^  static const int64_t NS_PER_S = 1000000000LL;$/;"	m	class:apache::thrift::concurrency::Util
+NS_PER_US	Util.h	/^  static const int64_t NS_PER_US = NS_PER_S \/ US_PER_S;$/;"	m	class:apache::thrift::concurrency::Util
+NoStarveReadWriteMutex	Mutex.cpp	/^NoStarveReadWriteMutex::NoStarveReadWriteMutex() : writerWaiting_(false) {$/;"	f	class:apache::thrift::concurrency::NoStarveReadWriteMutex
+NoStarveReadWriteMutex	Mutex.h	/^class NoStarveReadWriteMutex : public ReadWriteMutex {$/;"	c	namespace:apache::thrift::concurrency
+NoSuchTaskException	Exception.h	/^class NoSuchTaskException : public apache::thrift::TException {};$/;"	c	namespace:apache::thrift::concurrency
+OBJS	makefile	/^OBJS = $(patsubst %.cpp,%.o,$(CPP_SRCS)) $(patsubst %.cc,%.o,$(CC_SRCS)) $(patsubst %.c,%.o,$(C_SRCS)) $(patsubst %.s,%.o,$(S_SRCS)) $/;"	m
+OTHER	PosixThreadFactory.h	/^  enum POLICY { OTHER, FIFO, ROUND_ROBIN };$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::POLICY
+POLICY	PosixThreadFactory.h	/^  enum POLICY { OTHER, FIFO, ROUND_ROBIN };$/;"	g	class:apache::thrift::concurrency::PosixThreadFactory
+PRIORITY	PosixThreadFactory.h	/^  enum PRIORITY {$/;"	g	class:apache::thrift::concurrency::PosixThreadFactory
+PROFILE_MUTEX_LOCKED	Mutex.cpp	63;"	d	file:
+PROFILE_MUTEX_NOT_LOCKED	Mutex.cpp	55;"	d	file:
+PROFILE_MUTEX_START_LOCK	Mutex.cpp	53;"	d	file:
+PROFILE_MUTEX_START_UNLOCK	Mutex.cpp	71;"	d	file:
+PROFILE_MUTEX_UNLOCKED	Mutex.cpp	75;"	d	file:
+PosixThreadFactory	PosixThreadFactory.cpp	/^PosixThreadFactory::PosixThreadFactory(POLICY policy,$/;"	f	class:apache::thrift::concurrency::PosixThreadFactory
+PosixThreadFactory	PosixThreadFactory.cpp	/^PosixThreadFactory::PosixThreadFactory(bool detached)$/;"	f	class:apache::thrift::concurrency::PosixThreadFactory
+PosixThreadFactory	PosixThreadFactory.h	/^class PosixThreadFactory : public ThreadFactory {$/;"	c	namespace:apache::thrift::concurrency
+PthreadFuncPtr	FunctionRunner.h	/^  typedef void* (*PthreadFuncPtr)(void* arg);$/;"	t	class:apache::thrift::concurrency::FunctionRunner
+PthreadThread	PosixThreadFactory.cpp	/^  PthreadThread(int policy,$/;"	f	class:apache::thrift::concurrency::PthreadThread
+PthreadThread	PosixThreadFactory.cpp	/^class PthreadThread : public Thread {$/;"	c	namespace:apache::thrift::concurrency	file:
+RECURSIVE_INITIALIZER	Mutex.cpp	/^void Mutex::RECURSIVE_INITIALIZER(void* arg) {$/;"	f	class:apache::thrift::concurrency::Mutex
+ROUND_ROBIN	PosixThreadFactory.h	/^  enum POLICY { OTHER, FIFO, ROUND_ROBIN };$/;"	e	enum:apache::thrift::concurrency::PosixThreadFactory::POLICY
+RWGuard	Mutex.h	/^  RWGuard(const ReadWriteMutex& value, RWGuardType type) : rw_mutex_(value) {$/;"	f	class:apache::thrift::concurrency::RWGuard
+RWGuard	Mutex.h	/^  RWGuard(const ReadWriteMutex& value, bool write = false) : rw_mutex_(value) {$/;"	f	class:apache::thrift::concurrency::RWGuard
+RWGuard	Mutex.h	/^class RWGuard {$/;"	c	namespace:apache::thrift::concurrency
+RWGuardType	Mutex.h	/^enum RWGuardType { RW_READ = 0, RW_WRITE = 1 };$/;"	g	namespace:apache::thrift::concurrency
+RW_READ	Mutex.h	/^enum RWGuardType { RW_READ = 0, RW_WRITE = 1 };$/;"	e	enum:apache::thrift::concurrency::RWGuardType
+RW_WRITE	Mutex.h	/^enum RWGuardType { RW_READ = 0, RW_WRITE = 1 };$/;"	e	enum:apache::thrift::concurrency::RWGuardType
+ReadWriteMutex	Mutex.cpp	/^ReadWriteMutex::ReadWriteMutex() : impl_(new ReadWriteMutex::impl()) {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex
+ReadWriteMutex	Mutex.h	/^class ReadWriteMutex {$/;"	c	namespace:apache::thrift::concurrency
+Runnable	Thread.h	/^class Runnable {$/;"	c	namespace:apache::thrift::concurrency
+STARTED	ThreadManager.cpp	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::Worker::STATE	file:
+STARTED	ThreadManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, JOINING, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::STATE
+STARTED	TimerManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::TimerManager::STATE
+STARTING	ThreadManager.cpp	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::Worker::STATE	file:
+STARTING	ThreadManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, JOINING, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::STATE
+STARTING	TimerManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::TimerManager::STATE
+STATE	PosixThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	g	class:apache::thrift::concurrency::PthreadThread	file:
+STATE	StdThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	g	class:apache::thrift::concurrency::StdThread	file:
+STATE	ThreadManager.cpp	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	g	class:apache::thrift::concurrency::ThreadManager::Worker	file:
+STATE	ThreadManager.cpp	/^  enum STATE { WAITING, EXECUTING, TIMEDOUT, COMPLETE };$/;"	g	class:apache::thrift::concurrency::ThreadManager::Task	file:
+STATE	ThreadManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, JOINING, STOPPING, STOPPED };$/;"	g	class:apache::thrift::concurrency::ThreadManager
+STATE	TimerManager.cpp	/^  enum STATE { WAITING, EXECUTING, CANCELLED, COMPLETE };$/;"	g	class:apache::thrift::concurrency::TimerManager::Task	file:
+STATE	TimerManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	g	class:apache::thrift::concurrency::TimerManager
+STOPPED	ThreadManager.cpp	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::Worker::STATE	file:
+STOPPED	ThreadManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, JOINING, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::STATE
+STOPPED	TimerManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::TimerManager::STATE
+STOPPING	ThreadManager.cpp	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::Worker::STATE	file:
+STOPPING	ThreadManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, JOINING, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::STATE
+STOPPING	TimerManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::TimerManager::STATE
+SUB_DIRS	makefile	/^SUB_DIRS := $(foreach dir, $(VPATH), $(shell find $(dir) -maxdepth 5 -type d))$/;"	m
+SYSTEM_LIB_PATH	makefile	/^SYSTEM_LIB_PATH:=\/usr\/lib$/;"	m
+SYSTEM_LIB_PATH	makefile	/^SYSTEM_LIB_PATH:=\/usr\/lib64$/;"	m
+S_SRCS	makefile	/^S_SRCS = $(foreach dir, $(DIRS), $(wildcard $(dir)\/*.s))$/;"	m
+SimpleThreadManager	ThreadManager.cpp	/^  SimpleThreadManager(size_t workerCount = 4, size_t pendingTaskCountMax = 0)$/;"	f	class:apache::thrift::concurrency::SimpleThreadManager
+SimpleThreadManager	ThreadManager.cpp	/^class SimpleThreadManager : public ThreadManager::Impl {$/;"	c	namespace:apache::thrift::concurrency	file:
+StdThread	StdThreadFactory.cpp	/^  StdThread(bool detached, stdcxx::shared_ptr<Runnable> runnable)$/;"	f	class:apache::thrift::concurrency::StdThread
+StdThread	StdThreadFactory.cpp	/^class StdThread : public Thread, public stdcxx::enable_shared_from_this<StdThread> {$/;"	c	namespace:apache::thrift::concurrency	file:
+StdThreadFactory	StdThreadFactory.cpp	/^StdThreadFactory::StdThreadFactory(bool detached) : ThreadFactory(detached) {$/;"	f	class:apache::thrift::concurrency::StdThreadFactory
+StdThreadFactory	StdThreadFactory.h	/^class StdThreadFactory : public ThreadFactory {$/;"	c	namespace:apache::thrift::concurrency
+Synchronized	Monitor.h	/^  Synchronized(const Monitor& monitor) : g(monitor.mutex()) {}$/;"	f	class:apache::thrift::concurrency::Synchronized
+Synchronized	Monitor.h	/^  Synchronized(const Monitor* monitor) : g(monitor->mutex()) {}$/;"	f	class:apache::thrift::concurrency::Synchronized
+Synchronized	Monitor.h	/^class Synchronized {$/;"	c	namespace:apache::thrift::concurrency
+SystemResourceException	Exception.h	/^  SystemResourceException() {}$/;"	f	class:apache::thrift::concurrency::SystemResourceException
+SystemResourceException	Exception.h	/^  SystemResourceException(const std::string& message) : TException(message) {}$/;"	f	class:apache::thrift::concurrency::SystemResourceException
+SystemResourceException	Exception.h	/^class SystemResourceException : public apache::thrift::TException {$/;"	c	namespace:apache::thrift::concurrency
+TDelayedException	Common.h	/^class TDelayedException {$/;"	c	namespace:apache::thrift
+TException	Common.h	/^  TException() : message_() {}$/;"	f	class:apache::thrift::TException
+TException	Common.h	/^  TException(const std::string& message) : message_(message) {}$/;"	f	class:apache::thrift::TException
+TException	Common.h	/^class TException : public std::exception $/;"	c	namespace:apache::thrift
+TExceptionWrapper	Common.h	/^  TExceptionWrapper(const E& e) : e_(e) {}$/;"	f	class:apache::thrift::TExceptionWrapper
+TExceptionWrapper	Common.h	/^class TExceptionWrapper : public TDelayedException {$/;"	c	namespace:apache::thrift
+THRIFT_CLOSE	PlatformSocket.h	109;"	d
+THRIFT_CLOSE	PlatformSocket.h	47;"	d
+THRIFT_CLOSESOCKET	PlatformSocket.h	108;"	d
+THRIFT_CLOSESOCKET	PlatformSocket.h	46;"	d
+THRIFT_CTIME_R	PlatformSocket.h	126;"	d
+THRIFT_CTIME_R	PlatformSocket.h	72;"	d
+THRIFT_EAGAIN	PlatformSocket.h	30;"	d
+THRIFT_EAGAIN	PlatformSocket.h	97;"	d
+THRIFT_ECONNRESET	PlatformSocket.h	32;"	d
+THRIFT_ECONNRESET	PlatformSocket.h	93;"	d
+THRIFT_EINPROGRESS	PlatformSocket.h	29;"	d
+THRIFT_EINPROGRESS	PlatformSocket.h	92;"	d
+THRIFT_EINTR	PlatformSocket.h	31;"	d
+THRIFT_EINTR	PlatformSocket.h	91;"	d
+THRIFT_ENOTCONN	PlatformSocket.h	33;"	d
+THRIFT_ENOTCONN	PlatformSocket.h	94;"	d
+THRIFT_EPIPE	PlatformSocket.h	36;"	d
+THRIFT_EPIPE	PlatformSocket.h	98;"	d
+THRIFT_ERRNO	PlatformSocket.h	28;"	d
+THRIFT_ERRNO	PlatformSocket.h	90;"	d
+THRIFT_ETIMEDOUT	PlatformSocket.h	34;"	d
+THRIFT_ETIMEDOUT	PlatformSocket.h	95;"	d
+THRIFT_EWOULDBLOCK	PlatformSocket.h	35;"	d
+THRIFT_EWOULDBLOCK	PlatformSocket.h	96;"	d
+THRIFT_FCNTL	PlatformSocket.h	103;"	d
+THRIFT_FCNTL	PlatformSocket.h	41;"	d
+THRIFT_FSTAT	PlatformSocket.h	119;"	d
+THRIFT_FSTAT	PlatformSocket.h	56;"	d
+THRIFT_FSYNC	PlatformSocket.h	112;"	d
+THRIFT_FSYNC	PlatformSocket.h	50;"	d
+THRIFT_FTRUNCATE	PlatformSocket.h	111;"	d
+THRIFT_FTRUNCATE	PlatformSocket.h	49;"	d
+THRIFT_F_GETFL	PlatformSocket.h	105;"	d
+THRIFT_F_GETFL	PlatformSocket.h	43;"	d
+THRIFT_F_SETFL	PlatformSocket.h	106;"	d
+THRIFT_F_SETFL	PlatformSocket.h	44;"	d
+THRIFT_GAI_STRERROR	PlatformSocket.h	120;"	d
+THRIFT_GAI_STRERROR	PlatformSocket.h	59;"	d
+THRIFT_GAI_STRERROR	PlatformSocket.h	61;"	d
+THRIFT_GETTIMEOFDAY	PlatformSocket.h	107;"	d
+THRIFT_GETTIMEOFDAY	PlatformSocket.h	45;"	d
+THRIFT_GET_SOCKET_ERROR	PlatformSocket.h	27;"	d
+THRIFT_GET_SOCKET_ERROR	PlatformSocket.h	89;"	d
+THRIFT_INVALID_SOCKET	PlatformSocket.h	101;"	d
+THRIFT_INVALID_SOCKET	PlatformSocket.h	39;"	d
+THRIFT_IOCTL_SOCKET	PlatformSocket.h	116;"	d
+THRIFT_IOCTL_SOCKET	PlatformSocket.h	54;"	d
+THRIFT_IOCTL_SOCKET_NUM_BYTES_TYPE	PlatformSocket.h	117;"	d
+THRIFT_IOCTL_SOCKET_NUM_BYTES_TYPE	PlatformSocket.h	55;"	d
+THRIFT_LSEEK	PlatformSocket.h	113;"	d
+THRIFT_LSEEK	PlatformSocket.h	51;"	d
+THRIFT_NO_SOCKET_CACHING	PlatformSocket.h	37;"	d
+THRIFT_NO_SOCKET_CACHING	PlatformSocket.h	99;"	d
+THRIFT_OPEN	PlatformSocket.h	110;"	d
+THRIFT_OPEN	PlatformSocket.h	48;"	d
+THRIFT_O_NONBLOCK	PlatformSocket.h	104;"	d
+THRIFT_O_NONBLOCK	PlatformSocket.h	42;"	d
+THRIFT_POLL	PlatformSocket.h	127;"	d
+THRIFT_POLL	PlatformSocket.h	73;"	d
+THRIFT_POLLFD	PlatformSocket.h	128;"	d
+THRIFT_POLLFD	PlatformSocket.h	75;"	d
+THRIFT_POLLFD	PlatformSocket.h	79;"	d
+THRIFT_POLLIN	PlatformSocket.h	129;"	d
+THRIFT_POLLIN	PlatformSocket.h	76;"	d
+THRIFT_POLLIN	PlatformSocket.h	80;"	d
+THRIFT_POLLOUT	PlatformSocket.h	130;"	d
+THRIFT_POLLOUT	PlatformSocket.h	77;"	d
+THRIFT_POLLOUT	PlatformSocket.h	81;"	d
+THRIFT_READ	PlatformSocket.h	115;"	d
+THRIFT_READ	PlatformSocket.h	53;"	d
+THRIFT_SHUT_RDWR	PlatformSocket.h	131;"	d
+THRIFT_SHUT_RDWR	PlatformSocket.h	83;"	d
+THRIFT_SLEEP_SEC	PlatformSocket.h	123;"	d
+THRIFT_SLEEP_SEC	PlatformSocket.h	69;"	d
+THRIFT_SLEEP_USEC	PlatformSocket.h	124;"	d
+THRIFT_SLEEP_USEC	PlatformSocket.h	70;"	d
+THRIFT_SNPRINTF	PlatformSocket.h	122;"	d
+THRIFT_SNPRINTF	PlatformSocket.h	65;"	d
+THRIFT_SNPRINTF	PlatformSocket.h	67;"	d
+THRIFT_SOCKET	PlatformSocket.h	100;"	d
+THRIFT_SOCKET	PlatformSocket.h	38;"	d
+THRIFT_SOCKETPAIR	PlatformSocket.h	102;"	d
+THRIFT_SOCKETPAIR	PlatformSocket.h	40;"	d
+THRIFT_SSIZET	PlatformSocket.h	121;"	d
+THRIFT_SSIZET	PlatformSocket.h	63;"	d
+THRIFT_STAT	PlatformSocket.h	118;"	d
+THRIFT_STAT	PlatformSocket.h	57;"	d
+THRIFT_TIMESPEC	PlatformSocket.h	125;"	d
+THRIFT_TIMESPEC	PlatformSocket.h	71;"	d
+THRIFT_WRITE	PlatformSocket.h	114;"	d
+THRIFT_WRITE	PlatformSocket.h	52;"	d
+THROW_SRE	Mutex.cpp	117;"	d	file:
+THROW_SRE_ONFAIL	Mutex.cpp	118;"	d	file:
+THROW_SRE_TRYFAIL	Mutex.cpp	119;"	d	file:
+TIMEDOUT	ThreadManager.cpp	/^  enum STATE { WAITING, EXECUTING, TIMEDOUT, COMPLETE };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::Task::STATE	file:
+Task	ThreadManager.cpp	/^  Task(shared_ptr<Runnable> runnable, int64_t expiration = 0LL)$/;"	f	class:apache::thrift::concurrency::ThreadManager::Task
+Task	ThreadManager.cpp	/^class ThreadManager::Task : public Runnable {$/;"	c	class:apache::thrift::concurrency::ThreadManager	file:
+Task	TimerManager.cpp	/^  Task(shared_ptr<Runnable> runnable) : runnable_(runnable), state_(WAITING) {}$/;"	f	class:apache::thrift::concurrency::TimerManager::Task
+Task	TimerManager.cpp	/^class TimerManager::Task : public Runnable {$/;"	c	class:apache::thrift::concurrency::TimerManager	file:
+TaskQueue	ThreadManager.cpp	/^  typedef std::deque<shared_ptr<Task> > TaskQueue;$/;"	t	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+Thread	Thread.h	/^class Thread {$/;"	c	namespace:apache::thrift::concurrency
+ThreadFactory	Thread.h	/^  ThreadFactory(bool detached) : detached_(detached) { }$/;"	f	class:apache::thrift::concurrency::ThreadFactory
+ThreadFactory	Thread.h	/^class ThreadFactory {$/;"	c	namespace:apache::thrift::concurrency
+ThreadManager	ThreadManager.h	/^  ThreadManager() {}$/;"	f	class:apache::thrift::concurrency::ThreadManager
+ThreadManager	ThreadManager.h	/^class ThreadManager {$/;"	c	namespace:apache::thrift::concurrency
+TimedOutException	Exception.h	/^  TimedOutException() : TException("TimedOutException"){};$/;"	f	class:apache::thrift::concurrency::TimedOutException
+TimedOutException	Exception.h	/^  TimedOutException(const std::string& message) : TException(message) {}$/;"	f	class:apache::thrift::concurrency::TimedOutException
+TimedOutException	Exception.h	/^class TimedOutException : public apache::thrift::TException {$/;"	c	namespace:apache::thrift::concurrency
+Timer	TimerManager.h	/^  typedef stdcxx::weak_ptr<Task> Timer;$/;"	t	class:apache::thrift::concurrency::TimerManager
+TimerManager	TimerManager.cpp	/^TimerManager::TimerManager()$/;"	f	class:apache::thrift::concurrency::TimerManager
+TimerManager	TimerManager.h	/^class TimerManager {$/;"	c	namespace:apache::thrift::concurrency
+TooManyPendingTasksException	Exception.h	/^  TooManyPendingTasksException() : TException("TooManyPendingTasksException"){};$/;"	f	class:apache::thrift::concurrency::TooManyPendingTasksException
+TooManyPendingTasksException	Exception.h	/^  TooManyPendingTasksException(const std::string& message) : TException(message) {}$/;"	f	class:apache::thrift::concurrency::TooManyPendingTasksException
+TooManyPendingTasksException	Exception.h	/^class TooManyPendingTasksException : public apache::thrift::TException {$/;"	c	namespace:apache::thrift::concurrency
+UNINITIALIZED	ThreadManager.cpp	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::Worker::STATE	file:
+UNINITIALIZED	ThreadManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, JOINING, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::STATE
+UNINITIALIZED	TimerManager.h	/^  enum STATE { UNINITIALIZED, STARTING, STARTED, STOPPING, STOPPED };$/;"	e	enum:apache::thrift::concurrency::TimerManager::STATE
+US_PER_MS	Util.h	/^  static const int64_t US_PER_MS = US_PER_S \/ MS_PER_S;$/;"	m	class:apache::thrift::concurrency::Util
+US_PER_S	Util.h	/^  static const int64_t US_PER_S = 1000000LL;$/;"	m	class:apache::thrift::concurrency::Util
+UncancellableTaskException	Exception.h	/^class UncancellableTaskException : public apache::thrift::TException {};$/;"	c	namespace:apache::thrift::concurrency
+Util	Util.h	/^class Util {$/;"	c	namespace:apache::thrift::concurrency
+VPATH	makefile	/^VPATH = $(LOSS_PATH)$/;"	m
+VoidFunc	FunctionRunner.h	/^  typedef stdcxx::function<void()> VoidFunc;$/;"	t	class:apache::thrift::concurrency::FunctionRunner
+WAITING	ThreadManager.cpp	/^  enum STATE { WAITING, EXECUTING, TIMEDOUT, COMPLETE };$/;"	e	enum:apache::thrift::concurrency::ThreadManager::Task::STATE	file:
+WAITING	TimerManager.cpp	/^  enum STATE { WAITING, EXECUTING, CANCELLED, COMPLETE };$/;"	e	enum:apache::thrift::concurrency::TimerManager::Task::STATE	file:
+Worker	ThreadManager.cpp	/^  Worker(ThreadManager::Impl* manager) : manager_(manager), state_(UNINITIALIZED) {}$/;"	f	class:apache::thrift::concurrency::ThreadManager::Worker
+Worker	ThreadManager.cpp	/^class ThreadManager::Worker : public Runnable {$/;"	c	class:apache::thrift::concurrency::ThreadManager	file:
+_COMMON_H_	Common.h	2;"	d
+_THRIFT_CONCURRENCY_EXCEPTION_H_	Exception.h	21;"	d
+_THRIFT_CONCURRENCY_FUNCTION_RUNNER_H	FunctionRunner.h	21;"	d
+_THRIFT_CONCURRENCY_MONITOR_H_	Monitor.h	21;"	d
+_THRIFT_CONCURRENCY_MUTEX_H_	Mutex.h	21;"	d
+_THRIFT_CONCURRENCY_PLATFORMTHREADFACTORY_H_	PlatformThreadFactory.h	21;"	d
+_THRIFT_CONCURRENCY_POSIXTHREADFACTORY_H_	PosixThreadFactory.h	21;"	d
+_THRIFT_CONCURRENCY_STDTHREADFACTORY_H_	StdThreadFactory.h	21;"	d
+_THRIFT_CONCURRENCY_THREADMANAGER_H_	ThreadManager.h	21;"	d
+_THRIFT_CONCURRENCY_THREAD_H_	Thread.h	21;"	d
+_THRIFT_CONCURRENCY_TIMERMANAGER_H_	TimerManager.h	21;"	d
+_THRIFT_CONCURRENCY_UTIL_H_	Util.h	21;"	d
+_THRIFT_FUNCTIONAL_TR1_	stdcxx.h	36;"	d
+_THRIFT_STDCXX_H_	stdcxx.h	21;"	d
+_THRIFT_TRANSPORT_PLATFORM_SOCKET_H_	PlatformSocket.h	23;"	d
+__USE_GNU	Mutex.cpp	21;"	d	file:
+_runnable	Thread.h	/^  stdcxx::shared_ptr<Runnable> _runnable;$/;"	m	class:apache::thrift::concurrency::Thread
+acquireRead	Mutex.cpp	/^  void acquireRead() const {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex::impl
+acquireRead	Mutex.cpp	/^void NoStarveReadWriteMutex::acquireRead() const {$/;"	f	class:apache::thrift::concurrency::NoStarveReadWriteMutex
+acquireRead	Mutex.cpp	/^void ReadWriteMutex::acquireRead() const {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex
+acquireWrite	Mutex.cpp	/^  void acquireWrite() const {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex::impl
+acquireWrite	Mutex.cpp	/^void NoStarveReadWriteMutex::acquireWrite() const {$/;"	f	class:apache::thrift::concurrency::NoStarveReadWriteMutex
+acquireWrite	Mutex.cpp	/^void ReadWriteMutex::acquireWrite() const {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex
+add	ThreadManager.cpp	/^void ThreadManager::Impl::add(shared_ptr<Runnable> value, int64_t timeout, int64_t expiration) {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+add	TimerManager.cpp	/^TimerManager::Timer TimerManager::add(shared_ptr<Runnable> task, int64_t timeout) {$/;"	f	class:apache::thrift::concurrency::TimerManager
+add	TimerManager.cpp	/^TimerManager::Timer TimerManager::add(shared_ptr<Runnable> task,$/;"	f	class:apache::thrift::concurrency::TimerManager
+addWorker	ThreadManager.cpp	/^void ThreadManager::Impl::addWorker(size_t value) {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+apache	Common.h	/^namespace apache {$/;"	n
+apache	Exception.h	/^namespace apache {$/;"	n
+apache	FunctionRunner.h	/^namespace apache {$/;"	n
+apache	Monitor.cpp	/^namespace apache {$/;"	n	file:
+apache	Monitor.h	/^namespace apache {$/;"	n
+apache	Mutex.cpp	/^namespace apache {$/;"	n	file:
+apache	Mutex.h	/^namespace apache {$/;"	n
+apache	PlatformThreadFactory.h	/^namespace apache {$/;"	n
+apache	PosixThreadFactory.cpp	/^namespace apache {$/;"	n	file:
+apache	PosixThreadFactory.h	/^namespace apache {$/;"	n
+apache	StdMonitor.cpp	/^namespace apache {$/;"	n	file:
+apache	StdMutex.cpp	/^namespace apache {$/;"	n	file:
+apache	StdThreadFactory.cpp	/^namespace apache {$/;"	n	file:
+apache	StdThreadFactory.h	/^namespace apache {$/;"	n
+apache	Thread.h	/^namespace apache {$/;"	n
+apache	ThreadManager.cpp	/^namespace apache {$/;"	n	file:
+apache	ThreadManager.h	/^namespace apache {$/;"	n
+apache	TimerManager.cpp	/^namespace apache {$/;"	n	file:
+apache	TimerManager.h	/^namespace apache {$/;"	n
+apache	Util.cpp	/^namespace apache {$/;"	n	file:
+apache	Util.h	/^namespace apache {$/;"	n
+apache	stdcxx.h	/^  namespace apache { namespace thrift { namespace stdcxx {$/;"	n
+apache	stdcxx.h	/^namespace apache { namespace thrift { namespace stdcxx {$/;"	n
+attemptRead	Mutex.cpp	/^  bool attemptRead() const { THROW_SRE_TRYFAIL(pthread_rwlock_tryrdlock(&rw_lock_)); }$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex::impl
+attemptRead	Mutex.cpp	/^bool ReadWriteMutex::attemptRead() const {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex
+attemptWrite	Mutex.cpp	/^  bool attemptWrite() const { THROW_SRE_TRYFAIL(pthread_rwlock_trywrlock(&rw_lock_)); }$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex::impl
+attemptWrite	Mutex.cpp	/^bool ReadWriteMutex::attemptWrite() const {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex
+canSleep	ThreadManager.cpp	/^bool ThreadManager::Impl::canSleep() const {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+cleanup	Monitor.cpp	/^  void cleanup() {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl	file:
+concurrency	Exception.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+concurrency	FunctionRunner.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+concurrency	Monitor.cpp	/^namespace concurrency {$/;"	n	namespace:apache::thrift	file:
+concurrency	Monitor.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+concurrency	Mutex.cpp	/^namespace concurrency {$/;"	n	namespace:apache::thrift	file:
+concurrency	Mutex.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+concurrency	PlatformThreadFactory.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+concurrency	PosixThreadFactory.cpp	/^namespace concurrency {$/;"	n	namespace:apache::thrift	file:
+concurrency	PosixThreadFactory.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+concurrency	StdMonitor.cpp	/^namespace concurrency {$/;"	n	namespace:apache::thrift	file:
+concurrency	StdMutex.cpp	/^namespace concurrency {$/;"	n	namespace:apache::thrift	file:
+concurrency	StdThreadFactory.cpp	/^namespace concurrency {$/;"	n	namespace:apache::thrift	file:
+concurrency	StdThreadFactory.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+concurrency	Thread.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+concurrency	ThreadManager.cpp	/^namespace concurrency {$/;"	n	namespace:apache::thrift	file:
+concurrency	ThreadManager.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+concurrency	TimerManager.cpp	/^namespace concurrency {$/;"	n	namespace:apache::thrift	file:
+concurrency	TimerManager.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+concurrency	Util.cpp	/^namespace concurrency {$/;"	n	namespace:apache::thrift	file:
+concurrency	Util.h	/^namespace concurrency {$/;"	n	namespace:apache::thrift
+condInitialized_	Monitor.cpp	/^  mutable bool condInitialized_;$/;"	m	class:apache::thrift::concurrency::Monitor::Impl	file:
+conditionVariable_	StdMonitor.cpp	/^  std::condition_variable_any conditionVariable_;$/;"	m	class:apache::thrift::concurrency::Monitor::Impl	file:
+create	FunctionRunner.h	/^  static stdcxx::shared_ptr<FunctionRunner> create(PthreadFuncPtr func, void* arg) {$/;"	f	class:apache::thrift::concurrency::FunctionRunner
+create	FunctionRunner.h	/^  static stdcxx::shared_ptr<FunctionRunner> create(const VoidFunc& cob) {$/;"	f	class:apache::thrift::concurrency::FunctionRunner
+currentTime	Util.h	/^  static int64_t currentTime() { return currentTimeTicks(MS_PER_S); }$/;"	f	class:apache::thrift::concurrency::Util
+currentTimeTicks	Util.cpp	/^int64_t Util::currentTimeTicks(int64_t ticksPerSec) {$/;"	f	class:apache::thrift::concurrency::Util
+currentTimeUsec	Util.h	/^  static int64_t currentTimeUsec() { return currentTimeTicks(US_PER_S); }$/;"	f	class:apache::thrift::concurrency::Util
+deadWorkers_	ThreadManager.cpp	/^  std::set<shared_ptr<Thread> > deadWorkers_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+delayException	Common.h	/^TDelayedException* TDelayedException::delayException(const E& e) {$/;"	f	class:apache::thrift::TDelayedException
+detached_	PosixThreadFactory.cpp	/^  bool detached_;$/;"	m	class:apache::thrift::concurrency::PthreadThread	file:
+detached_	StdThreadFactory.cpp	/^  bool detached_;$/;"	m	class:apache::thrift::concurrency::StdThread	file:
+detached_	Thread.h	/^  bool detached_;$/;"	m	class:apache::thrift::concurrency::ThreadFactory
+dispatcherThread_	TimerManager.h	/^  stdcxx::shared_ptr<Thread> dispatcherThread_;$/;"	m	class:apache::thrift::concurrency::TimerManager
+dispatcher_	TimerManager.h	/^  stdcxx::shared_ptr<Dispatcher> dispatcher_;$/;"	m	class:apache::thrift::concurrency::TimerManager
+e_	Common.h	/^  E e_;$/;"	m	class:apache::thrift::TExceptionWrapper
+enableMutexProfiling	Mutex.cpp	/^void enableMutexProfiling(int32_t profilingSampleRate, MutexWaitCallback callback) {$/;"	f	namespace:apache::thrift::concurrency
+expireCallback_	ThreadManager.cpp	/^  ExpireCallback expireCallback_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+expireTime_	ThreadManager.cpp	/^  int64_t expireTime_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Task	file:
+expiredCount_	ThreadManager.cpp	/^  size_t expiredCount_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+expiredTaskCount	ThreadManager.cpp	/^  size_t expiredTaskCount() {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+func_	FunctionRunner.h	/^  VoidFunc func_;$/;"	m	class:apache::thrift::concurrency::FunctionRunner
+g	Monitor.h	/^  Guard g;$/;"	m	class:apache::thrift::concurrency::Synchronized
+getCurrentThreadId	PosixThreadFactory.cpp	/^Thread::id_t PosixThreadFactory::getCurrentThreadId() const {$/;"	f	class:apache::thrift::concurrency::PosixThreadFactory
+getCurrentThreadId	StdThreadFactory.cpp	/^Thread::id_t StdThreadFactory::getCurrentThreadId() const {$/;"	f	class:apache::thrift::concurrency::StdThreadFactory
+getExpireTime	ThreadManager.cpp	/^  int64_t getExpireTime() const { return expireTime_; }$/;"	f	class:apache::thrift::concurrency::ThreadManager::Task
+getId	PosixThreadFactory.cpp	/^  Thread::id_t getId() {$/;"	f	class:apache::thrift::concurrency::PthreadThread
+getId	StdThreadFactory.cpp	/^  Thread::id_t getId() { return thread_.get() ? thread_->get_id() : std::thread::id(); }$/;"	f	class:apache::thrift::concurrency::StdThread
+getPriority	PosixThreadFactory.cpp	/^PosixThreadFactory::PRIORITY PosixThreadFactory::getPriority() const {$/;"	f	class:apache::thrift::concurrency::PosixThreadFactory
+getRunnable	ThreadManager.cpp	/^  shared_ptr<Runnable> getRunnable() { return runnable_; }$/;"	f	class:apache::thrift::concurrency::ThreadManager::Task
+getStackSize	PosixThreadFactory.cpp	/^int PosixThreadFactory::getStackSize() const {$/;"	f	class:apache::thrift::concurrency::PosixThreadFactory
+getState	PosixThreadFactory.cpp	/^  STATE getState() const$/;"	f	class:apache::thrift::concurrency::PthreadThread
+getState	StdThreadFactory.cpp	/^  STATE getState() const$/;"	f	class:apache::thrift::concurrency::StdThread
+getUnderlyingImpl	Mutex.cpp	/^  void* getUnderlyingImpl() const { return (void*)&pthread_mutex_; }$/;"	f	class:apache::thrift::concurrency::Mutex::impl
+getUnderlyingImpl	Mutex.cpp	/^void* Mutex::getUnderlyingImpl() const {$/;"	f	class:apache::thrift::concurrency::Mutex
+getUnderlyingImpl	StdMutex.cpp	/^void* Mutex::getUnderlyingImpl() const {$/;"	f	class:apache::thrift::concurrency::Mutex
+get_current	Thread.h	/^  static inline id_t get_current() { return boost::this_thread::get_id(); }$/;"	f	class:apache::thrift::concurrency::Thread
+idMap_	ThreadManager.cpp	/^  std::map<const Thread::id_t, shared_ptr<Thread> > idMap_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+id_t	Thread.h	/^  typedef boost::thread::id id_t;$/;"	t	class:apache::thrift::concurrency::Thread
+idleCount_	ThreadManager.cpp	/^  size_t idleCount_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+idleWorkerCount	ThreadManager.cpp	/^  size_t idleWorkerCount() const { return idleCount_; }$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+impl	Mutex.cpp	/^  impl() : initialized_(false) {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex::impl
+impl	Mutex.cpp	/^  impl(Initializer init) : initialized_(false) {$/;"	f	class:apache::thrift::concurrency::Mutex::impl
+impl	Mutex.cpp	/^class Mutex::impl {$/;"	c	class:apache::thrift::concurrency::Mutex	file:
+impl	Mutex.cpp	/^class ReadWriteMutex::impl {$/;"	c	class:apache::thrift::concurrency::ReadWriteMutex	file:
+impl	StdMutex.cpp	/^class Mutex::impl : public std::timed_mutex {};$/;"	c	class:apache::thrift::concurrency::Mutex	file:
+impl_	Monitor.h	/^  Impl* impl_;$/;"	m	class:apache::thrift::concurrency::Monitor
+impl_	Mutex.h	/^  stdcxx::shared_ptr<impl> impl_;$/;"	m	class:apache::thrift::concurrency::Mutex
+impl_	Mutex.h	/^  stdcxx::shared_ptr<impl> impl_;$/;"	m	class:apache::thrift::concurrency::ReadWriteMutex
+init	Monitor.cpp	/^  void init(Mutex* mutex) {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl	file:
+init	StdMonitor.cpp	/^  void init(Mutex* mutex) { mutex_ = mutex; }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl	file:
+init_with_kind	Mutex.cpp	/^static void init_with_kind(pthread_mutex_t* mutex, int kind) {$/;"	f	namespace:apache::thrift::concurrency
+initialized_	Mutex.cpp	/^  mutable bool initialized_;$/;"	m	class:apache::thrift::concurrency::Mutex::impl	file:
+initialized_	Mutex.cpp	/^  mutable bool initialized_;$/;"	m	class:apache::thrift::concurrency::ReadWriteMutex::impl	file:
+intervalMs_	FunctionRunner.h	/^  int intervalMs_;$/;"	m	class:apache::thrift::concurrency::FunctionRunner
+isActive	ThreadManager.cpp	/^  bool isActive() const {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Worker	file:
+isDetached	Thread.h	/^  bool isDetached() const { return detached_; }$/;"	f	class:apache::thrift::concurrency::ThreadFactory
+is_current	Thread.h	/^  static inline bool is_current(id_t t) { return t == boost::this_thread::get_id(); }$/;"	f	class:apache::thrift::concurrency::Thread
+it_	TimerManager.cpp	/^  task_iterator it_;$/;"	m	class:apache::thrift::concurrency::TimerManager::Task	file:
+join	PosixThreadFactory.cpp	/^  void join() {$/;"	f	class:apache::thrift::concurrency::PthreadThread
+join	StdThreadFactory.cpp	/^  void join() {$/;"	f	class:apache::thrift::concurrency::StdThread
+lock	Monitor.cpp	/^  void lock() { mutex().lock(); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+lock	Monitor.cpp	/^void Monitor::lock() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+lock	Mutex.cpp	/^  void lock() const {$/;"	f	class:apache::thrift::concurrency::Mutex::impl
+lock	Mutex.cpp	/^void Mutex::lock() const {$/;"	f	class:apache::thrift::concurrency::Mutex
+lock	StdMonitor.cpp	/^  void lock() { mutex_->lock(); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+lock	StdMonitor.cpp	/^void Monitor::lock() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+lock	StdMutex.cpp	/^void Mutex::lock() const {$/;"	f	class:apache::thrift::concurrency::Mutex
+manager_	ThreadManager.cpp	/^  ThreadManager::Impl* manager_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Worker	file:
+manager_	TimerManager.cpp	/^  TimerManager* manager_;$/;"	m	class:apache::thrift::concurrency::TimerManager::Dispatcher	file:
+maxMonitor_	ThreadManager.cpp	/^  Monitor maxMonitor_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+maybeGetProfilingStartTime	Mutex.cpp	/^static inline int64_t maybeGetProfilingStartTime() {$/;"	f	namespace:apache::thrift::concurrency
+message_	Common.h	/^  std::string message_;$/;"	m	class:apache::thrift::TException
+monitor_	PosixThreadFactory.cpp	/^  Monitor monitor_;		\/\/ guard to protect state_ and also notification$/;"	m	class:apache::thrift::concurrency::PthreadThread	file:
+monitor_	StdThreadFactory.cpp	/^  Monitor monitor_;$/;"	m	class:apache::thrift::concurrency::StdThread	file:
+monitor_	ThreadManager.cpp	/^  Monitor monitor_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+monitor_	TimerManager.h	/^  Monitor monitor_;$/;"	m	class:apache::thrift::concurrency::TimerManager
+mutex	Monitor.cpp	/^  Mutex& mutex() { return *mutex_; }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+mutex	Monitor.cpp	/^Mutex& Monitor::mutex() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+mutex	StdMonitor.cpp	/^  Mutex& mutex() { return *mutex_; }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+mutex	StdMonitor.cpp	/^Mutex& Monitor::mutex() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+mutexProfilingCallback	Mutex.cpp	/^static MutexWaitCallback mutexProfilingCallback = 0;$/;"	m	namespace:apache::thrift::concurrency	file:
+mutexProfilingCounter	Mutex.cpp	/^static int32_t mutexProfilingCounter = 0;$/;"	m	namespace:apache::thrift::concurrency	file:
+mutexProfilingSampleRate	Mutex.cpp	/^static int32_t mutexProfilingSampleRate = 0;$/;"	m	namespace:apache::thrift::concurrency	file:
+mutex_	Monitor.cpp	/^  Mutex* mutex_;$/;"	m	class:apache::thrift::concurrency::Monitor::Impl	file:
+mutex_	Mutex.h	/^  Mutex mutex_;$/;"	m	class:apache::thrift::concurrency::NoStarveReadWriteMutex
+mutex_	Mutex.h	/^  const Mutex* mutex_;$/;"	m	class:apache::thrift::concurrency::Guard
+mutex_	StdMonitor.cpp	/^  Mutex* mutex_;$/;"	m	class:apache::thrift::concurrency::Monitor::Impl	file:
+mutex_	ThreadManager.cpp	/^  Mutex mutex_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+newSimpleThreadManager	ThreadManager.cpp	/^shared_ptr<ThreadManager> ThreadManager::newSimpleThreadManager(size_t count,$/;"	f	class:apache::thrift::concurrency::ThreadManager
+newThread	PosixThreadFactory.cpp	/^stdcxx::shared_ptr<Thread> PosixThreadFactory::newThread(stdcxx::shared_ptr<Runnable> runnable) const {$/;"	f	class:apache::thrift::concurrency::PosixThreadFactory
+newThread	StdThreadFactory.cpp	/^stdcxx::shared_ptr<Thread> StdThreadFactory::newThread(stdcxx::shared_ptr<Runnable> runnable) const {$/;"	f	class:apache::thrift::concurrency::StdThreadFactory
+newThreadManager	ThreadManager.cpp	/^shared_ptr<ThreadManager> ThreadManager::newThreadManager() {$/;"	f	class:apache::thrift::concurrency::ThreadManager
+notify	Monitor.cpp	/^  void notify() {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+notify	Monitor.cpp	/^void Monitor::notify() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+notify	StdMonitor.cpp	/^  void notify() { conditionVariable_.notify_one(); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+notify	StdMonitor.cpp	/^void Monitor::notify() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+notifyAll	Monitor.cpp	/^  void notifyAll() {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+notifyAll	Monitor.cpp	/^void Monitor::notifyAll() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+notifyAll	StdMonitor.cpp	/^  void notifyAll() { conditionVariable_.notify_all(); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+notifyAll	StdMonitor.cpp	/^void Monitor::notifyAll() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+operator =	Monitor.h	/^  Monitor& operator = (const Monitor& item) { return *this; }$/;"	f	class:apache::thrift::concurrency::Monitor
+operator =	Mutex.h	/^  Guard& operator = (const Guard& item) { return *this; }$/;"	f	class:apache::thrift::concurrency::Guard
+operator ==	TimerManager.cpp	/^  bool operator==(const shared_ptr<Runnable> & runnable) const { return runnable_ == runnable; }$/;"	f	class:apache::thrift::concurrency::TimerManager::Task
+operator bool	Mutex.h	/^  operator bool() const { return (mutex_ != NULL); }$/;"	f	class:apache::thrift::concurrency::Guard
+ownedMutex_	Monitor.cpp	/^  scoped_ptr<Mutex> ownedMutex_;$/;"	m	class:apache::thrift::concurrency::Monitor::Impl	file:
+ownedMutex_	StdMonitor.cpp	/^  const std::unique_ptr<Mutex> ownedMutex_;$/;"	m	class:apache::thrift::concurrency::Monitor::Impl	file:
+pendingTaskCount	ThreadManager.cpp	/^  size_t pendingTaskCount() const {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+pendingTaskCountMax	ThreadManager.cpp	/^  size_t pendingTaskCountMax() const {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+pendingTaskCountMax	ThreadManager.cpp	/^  void pendingTaskCountMax(const size_t value) {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+pendingTaskCountMax_	ThreadManager.cpp	/^  const size_t pendingTaskCountMax_;$/;"	m	class:apache::thrift::concurrency::SimpleThreadManager	file:
+pendingTaskCountMax_	ThreadManager.cpp	/^  size_t pendingTaskCountMax_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+placeholders	stdcxx.h	/^    namespace placeholders {$/;"	n	namespace:apache::thrift::stdcxx
+policy_	PosixThreadFactory.cpp	/^  int policy_;$/;"	m	class:apache::thrift::concurrency::PthreadThread	file:
+policy_	PosixThreadFactory.h	/^  POLICY policy_;$/;"	m	class:apache::thrift::concurrency::PosixThreadFactory
+priority_	PosixThreadFactory.cpp	/^  int priority_;$/;"	m	class:apache::thrift::concurrency::PthreadThread	file:
+priority_	PosixThreadFactory.h	/^  PRIORITY priority_;$/;"	m	class:apache::thrift::concurrency::PosixThreadFactory
+profileTime_	Mutex.cpp	/^  mutable int64_t profileTime_;$/;"	m	class:apache::thrift::concurrency::Mutex::impl	file:
+profileTime_	Mutex.cpp	/^  mutable int64_t profileTime_;$/;"	m	class:apache::thrift::concurrency::ReadWriteMutex::impl	file:
+pthread_	PosixThreadFactory.cpp	/^  pthread_t pthread_;$/;"	m	class:apache::thrift::concurrency::PthreadThread	file:
+pthread_cond_	Monitor.cpp	/^  mutable pthread_cond_t pthread_cond_;$/;"	m	class:apache::thrift::concurrency::Monitor::Impl	file:
+pthread_func_wrapper	FunctionRunner.h	/^  static void pthread_func_wrapper(PthreadFuncPtr func, void* arg) {$/;"	f	class:apache::thrift::concurrency::FunctionRunner
+pthread_mutex_	Mutex.cpp	/^  mutable pthread_mutex_t pthread_mutex_;$/;"	m	class:apache::thrift::concurrency::Mutex::impl	file:
+release	Mutex.cpp	/^  void release() const {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex::impl
+release	Mutex.cpp	/^void ReadWriteMutex::release() const {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex
+remove	ThreadManager.cpp	/^void ThreadManager::Impl::remove(shared_ptr<Runnable> task) {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+remove	TimerManager.cpp	/^void TimerManager::remove(Timer handle) {$/;"	f	class:apache::thrift::concurrency::TimerManager
+remove	TimerManager.cpp	/^void TimerManager::remove(shared_ptr<Runnable> task) {$/;"	f	class:apache::thrift::concurrency::TimerManager
+removeExpired	ThreadManager.cpp	/^void ThreadManager::Impl::removeExpired(bool justOne) {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+removeExpiredTasks	ThreadManager.cpp	/^  void removeExpiredTasks() {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+removeNextPending	ThreadManager.cpp	/^stdcxx::shared_ptr<Runnable> ThreadManager::Impl::removeNextPending() {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+removeWorker	ThreadManager.cpp	/^void ThreadManager::Impl::removeWorker(size_t value) {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+removeWorkersUnderLock	ThreadManager.cpp	/^void ThreadManager::Impl::removeWorkersUnderLock(size_t value) {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+repFunc_	FunctionRunner.h	/^  BoolFunc repFunc_;$/;"	m	class:apache::thrift::concurrency::FunctionRunner
+run	FunctionRunner.h	/^  void run() {$/;"	f	class:apache::thrift::concurrency::FunctionRunner
+run	ThreadManager.cpp	/^  void run() {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Task
+run	ThreadManager.cpp	/^  void run() {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Worker
+run	TimerManager.cpp	/^  void run() {$/;"	f	class:apache::thrift::concurrency::TimerManager::Dispatcher
+run	TimerManager.cpp	/^  void run() {$/;"	f	class:apache::thrift::concurrency::TimerManager::Task
+runnable	PosixThreadFactory.cpp	/^  stdcxx::shared_ptr<Runnable> runnable() const { return Thread::runnable(); }$/;"	f	class:apache::thrift::concurrency::PthreadThread
+runnable	PosixThreadFactory.cpp	/^  void runnable(stdcxx::shared_ptr<Runnable> value) { Thread::runnable(value); }$/;"	f	class:apache::thrift::concurrency::PthreadThread
+runnable	StdThreadFactory.cpp	/^  stdcxx::shared_ptr<Runnable> runnable() const { return Thread::runnable(); }$/;"	f	class:apache::thrift::concurrency::StdThread
+runnable	StdThreadFactory.cpp	/^  void runnable(stdcxx::shared_ptr<Runnable> value) { Thread::runnable(value); }$/;"	f	class:apache::thrift::concurrency::StdThread
+runnable	Thread.h	/^  virtual stdcxx::shared_ptr<Runnable> runnable() const { return _runnable; }$/;"	f	class:apache::thrift::concurrency::Thread
+runnable	Thread.h	/^  virtual void runnable(stdcxx::shared_ptr<Runnable> value) { _runnable = value; }$/;"	f	class:apache::thrift::concurrency::Thread
+runnable_	ThreadManager.cpp	/^  shared_ptr<Runnable> runnable_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Task	file:
+runnable_	TimerManager.cpp	/^  shared_ptr<Runnable> runnable_;$/;"	m	class:apache::thrift::concurrency::TimerManager::Task	file:
+rw_lock_	Mutex.cpp	/^  mutable pthread_rwlock_t rw_lock_;$/;"	m	class:apache::thrift::concurrency::ReadWriteMutex::impl	file:
+rw_mutex_	Mutex.h	/^  const ReadWriteMutex& rw_mutex_;$/;"	m	class:apache::thrift::concurrency::RWGuard
+self_	PosixThreadFactory.cpp	/^  stdcxx::weak_ptr<PthreadThread> self_;$/;"	m	class:apache::thrift::concurrency::PthreadThread	file:
+setDetached	Thread.h	/^  void setDetached(bool detached) { detached_ = detached; }$/;"	f	class:apache::thrift::concurrency::ThreadFactory
+setExpireCallback	ThreadManager.cpp	/^void ThreadManager::Impl::setExpireCallback(ExpireCallback expireCallback) {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+setPriority	PosixThreadFactory.cpp	/^void PosixThreadFactory::setPriority(PRIORITY value) {$/;"	f	class:apache::thrift::concurrency::PosixThreadFactory
+setStackSize	PosixThreadFactory.cpp	/^void PosixThreadFactory::setStackSize(int value) {$/;"	f	class:apache::thrift::concurrency::PosixThreadFactory
+setState	PosixThreadFactory.cpp	/^  void setState(STATE newState)$/;"	f	class:apache::thrift::concurrency::PthreadThread
+setState	StdThreadFactory.cpp	/^  void setState(STATE newState)$/;"	f	class:apache::thrift::concurrency::StdThread
+stackSize_	PosixThreadFactory.cpp	/^  int stackSize_;$/;"	m	class:apache::thrift::concurrency::PthreadThread	file:
+stackSize_	PosixThreadFactory.h	/^  int stackSize_;$/;"	m	class:apache::thrift::concurrency::PosixThreadFactory
+start	PosixThreadFactory.cpp	/^  void start() {$/;"	f	class:apache::thrift::concurrency::PthreadThread
+start	StdThreadFactory.cpp	/^  void start() {$/;"	f	class:apache::thrift::concurrency::StdThread
+start	ThreadManager.cpp	/^  void start() {$/;"	f	class:apache::thrift::concurrency::SimpleThreadManager
+start	ThreadManager.cpp	/^void ThreadManager::Impl::start() {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+start	TimerManager.cpp	/^void TimerManager::start() {$/;"	f	class:apache::thrift::concurrency::TimerManager
+started	PosixThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	e	enum:apache::thrift::concurrency::PthreadThread::STATE	file:
+started	StdThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	e	enum:apache::thrift::concurrency::StdThread::STATE	file:
+starting	PosixThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	e	enum:apache::thrift::concurrency::PthreadThread::STATE	file:
+starting	StdThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	e	enum:apache::thrift::concurrency::StdThread::STATE	file:
+state	ThreadManager.cpp	/^  ThreadManager::STATE state() const { return state_; }$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+state	TimerManager.cpp	/^TimerManager::STATE TimerManager::state() const {$/;"	f	class:apache::thrift::concurrency::TimerManager
+state_	PosixThreadFactory.cpp	/^  STATE state_;         \/\/ to protect proper thread start behavior$/;"	m	class:apache::thrift::concurrency::PthreadThread	file:
+state_	StdThreadFactory.cpp	/^  STATE state_;$/;"	m	class:apache::thrift::concurrency::StdThread	file:
+state_	ThreadManager.cpp	/^  STATE state_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Task	file:
+state_	ThreadManager.cpp	/^  STATE state_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Worker	file:
+state_	ThreadManager.cpp	/^  ThreadManager::STATE state_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+state_	TimerManager.cpp	/^  STATE state_;$/;"	m	class:apache::thrift::concurrency::TimerManager::Task	file:
+state_	TimerManager.h	/^  STATE state_;$/;"	m	class:apache::thrift::concurrency::TimerManager
+stdcxx	stdcxx.h	/^  namespace apache { namespace thrift { namespace stdcxx {$/;"	n	namespace:apache::thrift
+stdcxx	stdcxx.h	/^namespace apache { namespace thrift { namespace stdcxx {$/;"	n	namespace:apache::thrift
+stop	ThreadManager.cpp	/^void ThreadManager::Impl::stop() {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+stop	TimerManager.cpp	/^void TimerManager::stop() {$/;"	f	class:apache::thrift::concurrency::TimerManager
+stopped	PosixThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	e	enum:apache::thrift::concurrency::PthreadThread::STATE	file:
+stopped	StdThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	e	enum:apache::thrift::concurrency::StdThread::STATE	file:
+stopping	PosixThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	e	enum:apache::thrift::concurrency::PthreadThread::STATE	file:
+stopping	StdThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	e	enum:apache::thrift::concurrency::StdThread::STATE	file:
+taskCount	TimerManager.cpp	/^size_t TimerManager::taskCount() const {$/;"	f	class:apache::thrift::concurrency::TimerManager
+taskCount_	TimerManager.h	/^  size_t taskCount_;$/;"	m	class:apache::thrift::concurrency::TimerManager
+taskMap_	TimerManager.h	/^  std::multimap<int64_t, stdcxx::shared_ptr<Task> > taskMap_;$/;"	m	class:apache::thrift::concurrency::TimerManager
+task_iterator	TimerManager.h	/^  typedef std::multimap<int64_t, stdcxx::shared_ptr<TimerManager::Task> >::iterator task_iterator;$/;"	t	class:apache::thrift::concurrency::TimerManager
+task_range	TimerManager.h	/^  typedef std::pair<task_iterator, task_iterator> task_range;$/;"	t	class:apache::thrift::concurrency::TimerManager
+tasks_	ThreadManager.cpp	/^  TaskQueue tasks_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+thread	Thread.h	/^  virtual stdcxx::shared_ptr<Thread> thread() { return thread_.lock(); }$/;"	f	class:apache::thrift::concurrency::Runnable
+thread	Thread.h	/^  virtual void thread(stdcxx::shared_ptr<Thread> value) { thread_ = value; }$/;"	f	class:apache::thrift::concurrency::Runnable
+threadFactory	ThreadManager.cpp	/^  shared_ptr<ThreadFactory> threadFactory() const {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+threadFactory	ThreadManager.cpp	/^  void threadFactory(shared_ptr<ThreadFactory> value) {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+threadFactory	TimerManager.cpp	/^shared_ptr<const ThreadFactory> TimerManager::threadFactory() const {$/;"	f	class:apache::thrift::concurrency::TimerManager
+threadFactory	TimerManager.cpp	/^void TimerManager::threadFactory(shared_ptr<const ThreadFactory> value) {$/;"	f	class:apache::thrift::concurrency::TimerManager
+threadFactory_	ThreadManager.cpp	/^  shared_ptr<ThreadFactory> threadFactory_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+threadFactory_	TimerManager.h	/^  stdcxx::shared_ptr<const ThreadFactory> threadFactory_;$/;"	m	class:apache::thrift::concurrency::TimerManager
+threadMain	PosixThreadFactory.cpp	/^void* PthreadThread::threadMain(void* arg) {$/;"	f	class:apache::thrift::concurrency::PthreadThread
+threadMain	StdThreadFactory.cpp	/^void StdThread::threadMain(stdcxx::shared_ptr<StdThread> thread) {$/;"	f	class:apache::thrift::concurrency::StdThread
+thread_	StdThreadFactory.cpp	/^  std::unique_ptr<std::thread> thread_;$/;"	m	class:apache::thrift::concurrency::StdThread	file:
+thread_	Thread.h	/^  stdcxx::weak_ptr<Thread> thread_;$/;"	m	class:apache::thrift::concurrency::Runnable
+thrift	Common.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	Exception.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	FunctionRunner.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	Monitor.cpp	/^namespace thrift {$/;"	n	namespace:apache	file:
+thrift	Monitor.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	Mutex.cpp	/^namespace thrift {$/;"	n	namespace:apache	file:
+thrift	Mutex.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	PlatformThreadFactory.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	PosixThreadFactory.cpp	/^namespace thrift {$/;"	n	namespace:apache	file:
+thrift	PosixThreadFactory.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	StdMonitor.cpp	/^namespace thrift {$/;"	n	namespace:apache	file:
+thrift	StdMutex.cpp	/^namespace thrift {$/;"	n	namespace:apache	file:
+thrift	StdThreadFactory.cpp	/^namespace thrift {$/;"	n	namespace:apache	file:
+thrift	StdThreadFactory.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	Thread.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	ThreadManager.cpp	/^namespace thrift {$/;"	n	namespace:apache	file:
+thrift	ThreadManager.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	TimerManager.cpp	/^namespace thrift {$/;"	n	namespace:apache	file:
+thrift	TimerManager.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	Util.cpp	/^namespace thrift {$/;"	n	namespace:apache	file:
+thrift	Util.h	/^namespace thrift {$/;"	n	namespace:apache
+thrift	stdcxx.h	/^  namespace apache { namespace thrift { namespace stdcxx {$/;"	n	namespace:apache
+thrift	stdcxx.h	/^namespace apache { namespace thrift { namespace stdcxx {$/;"	n	namespace:apache
+throw_it	Common.h	/^  virtual void throw_it() {$/;"	f	class:apache::thrift::TExceptionWrapper
+timedlock	Mutex.cpp	/^  bool timedlock(int64_t milliseconds) const {$/;"	f	class:apache::thrift::concurrency::Mutex::impl
+timedlock	Mutex.cpp	/^bool Mutex::timedlock(int64_t ms) const {$/;"	f	class:apache::thrift::concurrency::Mutex
+timedlock	StdMutex.cpp	/^bool Mutex::timedlock(int64_t ms) const {$/;"	f	class:apache::thrift::concurrency::Mutex
+toMilliseconds	Util.h	/^  static void toMilliseconds(int64_t& result, const struct THRIFT_TIMESPEC& value) {$/;"	f	class:apache::thrift::concurrency::Util
+toMilliseconds	Util.h	/^  static void toMilliseconds(int64_t& result, const struct timeval& value) {$/;"	f	class:apache::thrift::concurrency::Util
+toPthreadPolicy	PosixThreadFactory.cpp	/^static int toPthreadPolicy(PosixThreadFactory::POLICY policy) {$/;"	f	namespace:apache::thrift::concurrency
+toPthreadPriority	PosixThreadFactory.cpp	/^static int toPthreadPriority(PosixThreadFactory::POLICY policy, PosixThreadFactory::PRIORITY priority) {$/;"	f	namespace:apache::thrift::concurrency
+toTicks	Util.h	/^  static void toTicks(int64_t& result, const struct THRIFT_TIMESPEC& value, int64_t ticksPerSec) {$/;"	f	class:apache::thrift::concurrency::Util
+toTicks	Util.h	/^  static void toTicks(int64_t& result, const struct timeval& value, int64_t ticksPerSec) {$/;"	f	class:apache::thrift::concurrency::Util
+toTicks	Util.h	/^  static void toTicks(int64_t& result,$/;"	f	class:apache::thrift::concurrency::Util
+toTimespec	Util.h	/^  static void toTimespec(struct THRIFT_TIMESPEC& result, int64_t value) {$/;"	f	class:apache::thrift::concurrency::Util
+toTimeval	Util.h	/^  static void toTimeval(struct timeval& result, int64_t value) {$/;"	f	class:apache::thrift::concurrency::Util
+toUsec	Util.h	/^  static void toUsec(int64_t& result, const struct THRIFT_TIMESPEC& value) {$/;"	f	class:apache::thrift::concurrency::Util
+toUsec	Util.h	/^  static void toUsec(int64_t& result, const struct timeval& value) {$/;"	f	class:apache::thrift::concurrency::Util
+totalTaskCount	ThreadManager.cpp	/^  size_t totalTaskCount() const {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+trylock	Mutex.cpp	/^  bool trylock() const {$/;"	f	class:apache::thrift::concurrency::Mutex::impl
+trylock	Mutex.cpp	/^bool Mutex::trylock() const {$/;"	f	class:apache::thrift::concurrency::Mutex
+trylock	StdMutex.cpp	/^bool Mutex::trylock() const {$/;"	f	class:apache::thrift::concurrency::Mutex
+uninitialized	PosixThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	e	enum:apache::thrift::concurrency::PthreadThread::STATE	file:
+uninitialized	StdThreadFactory.cpp	/^  enum STATE { uninitialized, starting, started, stopping, stopped };$/;"	e	enum:apache::thrift::concurrency::StdThread::STATE	file:
+unknown_thread_id	Thread.h	/^  static const Thread::id_t unknown_thread_id;$/;"	m	class:apache::thrift::concurrency::ThreadFactory
+unlock	Monitor.cpp	/^  void unlock() { mutex().unlock(); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+unlock	Monitor.cpp	/^void Monitor::unlock() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+unlock	Mutex.cpp	/^  void unlock() const {$/;"	f	class:apache::thrift::concurrency::Mutex::impl
+unlock	Mutex.cpp	/^void Mutex::unlock() const {$/;"	f	class:apache::thrift::concurrency::Mutex
+unlock	StdMonitor.cpp	/^  void unlock() { mutex_->unlock(); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+unlock	StdMonitor.cpp	/^void Monitor::unlock() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+unlock	StdMutex.cpp	/^void Mutex::unlock() const {$/;"	f	class:apache::thrift::concurrency::Mutex
+wait	Monitor.cpp	/^  void wait(int64_t timeout_ms) const {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+wait	Monitor.cpp	/^void Monitor::wait(int64_t timeout) const {$/;"	f	class:apache::thrift::concurrency::Monitor
+wait	StdMonitor.cpp	/^  void wait(int64_t timeout_ms) {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+wait	StdMonitor.cpp	/^void Monitor::wait(int64_t timeout) const {$/;"	f	class:apache::thrift::concurrency::Monitor
+waitForTime	Monitor.cpp	/^  int waitForTime(const THRIFT_TIMESPEC* abstime) const {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+waitForTime	Monitor.cpp	/^  int waitForTime(const struct timeval* abstime) const {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+waitForTime	Monitor.cpp	/^int Monitor::waitForTime(const THRIFT_TIMESPEC* abstime) const {$/;"	f	class:apache::thrift::concurrency::Monitor
+waitForTime	Monitor.cpp	/^int Monitor::waitForTime(const timeval* abstime) const {$/;"	f	class:apache::thrift::concurrency::Monitor
+waitForTime	StdMonitor.cpp	/^  int waitForTime(const THRIFT_TIMESPEC* abstime) {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+waitForTime	StdMonitor.cpp	/^  int waitForTime(const struct timeval* abstime) {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+waitForTime	StdMonitor.cpp	/^int Monitor::waitForTime(const THRIFT_TIMESPEC* abstime) const {$/;"	f	class:apache::thrift::concurrency::Monitor
+waitForTime	StdMonitor.cpp	/^int Monitor::waitForTime(const timeval* abstime) const {$/;"	f	class:apache::thrift::concurrency::Monitor
+waitForTimeRelative	Monitor.cpp	/^  int waitForTimeRelative(int64_t timeout_ms) const {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+waitForTimeRelative	Monitor.cpp	/^int Monitor::waitForTimeRelative(int64_t timeout_ms) const {$/;"	f	class:apache::thrift::concurrency::Monitor
+waitForTimeRelative	StdMonitor.cpp	/^  int waitForTimeRelative(int64_t timeout_ms) {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+waitForTimeRelative	StdMonitor.cpp	/^int Monitor::waitForTimeRelative(int64_t timeout_ms) const {$/;"	f	class:apache::thrift::concurrency::Monitor
+waitForever	Monitor.cpp	/^  int waitForever() const {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+waitForever	Monitor.cpp	/^int Monitor::waitForever() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+waitForever	StdMonitor.cpp	/^  int waitForever() {$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+waitForever	StdMonitor.cpp	/^int Monitor::waitForever() const {$/;"	f	class:apache::thrift::concurrency::Monitor
+weakRef	PosixThreadFactory.cpp	/^  void weakRef(stdcxx::shared_ptr<PthreadThread> self) {$/;"	f	class:apache::thrift::concurrency::PthreadThread
+what	Common.h	/^  virtual const char* what() const throw() {$/;"	f	class:apache::thrift::TException
+workerCount	ThreadManager.cpp	/^  size_t workerCount() const {$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+workerCount_	ThreadManager.cpp	/^  const size_t workerCount_;$/;"	m	class:apache::thrift::concurrency::SimpleThreadManager	file:
+workerCount_	ThreadManager.cpp	/^  size_t workerCount_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+workerMaxCount_	ThreadManager.cpp	/^  size_t workerMaxCount_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+workerMonitor_	ThreadManager.cpp	/^  Monitor workerMonitor_;       \/\/ used to synchronize changes in worker count$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+workers_	ThreadManager.cpp	/^  std::set<shared_ptr<Thread> > workers_;$/;"	m	class:apache::thrift::concurrency::ThreadManager::Impl	file:
+writerWaiting_	Mutex.h	/^  mutable volatile bool writerWaiting_;$/;"	m	class:apache::thrift::concurrency::NoStarveReadWriteMutex
+~Dispatcher	TimerManager.cpp	/^  ~Dispatcher() {}$/;"	f	class:apache::thrift::concurrency::TimerManager::Dispatcher
+~Guard	Mutex.h	/^  ~Guard() {$/;"	f	class:apache::thrift::concurrency::Guard
+~Impl	Monitor.cpp	/^  ~Impl() { cleanup(); }$/;"	f	class:apache::thrift::concurrency::Monitor::Impl
+~Impl	ThreadManager.cpp	/^  ~Impl() { stop(); }$/;"	f	class:apache::thrift::concurrency::ThreadManager::Impl
+~Monitor	Monitor.cpp	/^Monitor::~Monitor() {$/;"	f	class:apache::thrift::concurrency::Monitor
+~Monitor	StdMonitor.cpp	/^Monitor::~Monitor() {$/;"	f	class:apache::thrift::concurrency::Monitor
+~Mutex	Mutex.h	/^  virtual ~Mutex() {}$/;"	f	class:apache::thrift::concurrency::Mutex
+~PthreadThread	PosixThreadFactory.cpp	/^  ~PthreadThread() {$/;"	f	class:apache::thrift::concurrency::PthreadThread
+~RWGuard	Mutex.h	/^  ~RWGuard() { rw_mutex_.release(); }$/;"	f	class:apache::thrift::concurrency::RWGuard
+~ReadWriteMutex	Mutex.h	/^  virtual ~ReadWriteMutex() {}$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex
+~Runnable	Thread.h	/^  virtual ~Runnable(){};$/;"	f	class:apache::thrift::concurrency::Runnable
+~StdThread	StdThreadFactory.cpp	/^  ~StdThread() {$/;"	f	class:apache::thrift::concurrency::StdThread
+~TDelayedException	Common.h	/^  virtual ~TDelayedException(){};$/;"	f	class:apache::thrift::TDelayedException
+~TException	Common.h	/^  virtual ~TException() throw() {}$/;"	f	class:apache::thrift::TException
+~Task	ThreadManager.cpp	/^  ~Task() {}$/;"	f	class:apache::thrift::concurrency::ThreadManager::Task
+~Task	TimerManager.cpp	/^  ~Task() {}$/;"	f	class:apache::thrift::concurrency::TimerManager::Task
+~Thread	Thread.h	/^  virtual ~Thread(){};$/;"	f	class:apache::thrift::concurrency::Thread
+~ThreadFactory	Thread.h	/^  virtual ~ThreadFactory() { }$/;"	f	class:apache::thrift::concurrency::ThreadFactory
+~ThreadManager	ThreadManager.h	/^  virtual ~ThreadManager() {}$/;"	f	class:apache::thrift::concurrency::ThreadManager
+~TimerManager	TimerManager.cpp	/^TimerManager::~TimerManager() {$/;"	f	class:apache::thrift::concurrency::TimerManager
+~Worker	ThreadManager.cpp	/^  ~Worker() {}$/;"	f	class:apache::thrift::concurrency::ThreadManager::Worker
+~impl	Mutex.cpp	/^  ~impl() {$/;"	f	class:apache::thrift::concurrency::Mutex::impl
+~impl	Mutex.cpp	/^  ~impl() {$/;"	f	class:apache::thrift::concurrency::ReadWriteMutex::impl
