@@ -25,12 +25,12 @@ class TestTask: public Runnable
  public:
   TestTask() {}
   virtual void run();
-  void SetThreadManager(shared_ptr<ThreadManager> threadManager) 
+  void SetThreadManager(ThreadManager* threadManager) 
   {
-      m_pThreadManager = threadManager;
+      m_pthreadManager = threadManager;
   }
  private:
-  shared_ptr<ThreadManager> m_pThreadManager;
+  ThreadManager* m_pthreadManager;
 
 };
 
@@ -41,6 +41,14 @@ class Test
   virtual ~Test() {}
 
   void DispatchTask();
+  int GetTotalTaskCount() 
+  {
+      return m_pThreadManager->pendingTaskCount();
+  }
+  void StopAllTask()
+  {
+      m_pThreadManager->stop();
+  }
  private:
   void StartThreads();
   
@@ -75,20 +83,23 @@ void Test::StartThreads()
         std::cout << "catch err, msg: " << ex.what() << std::endl;
         exit(1);
     }
+
+    std::cout << __FUNCTION__<< "()" << std::endl;
     std::cout << "thread nums: " << m_iThreadNums << ", all threads started " << std::endl;
-    usleep(100000);
+    sleep(1);
 }
 
 void Test::DispatchTask()
 {
     std::cout << "call func: " << __FUNCTION__ << std::endl;
-    for (int iTaskNums = 0; iTaskNums < 1; ++iTaskNums)
+    int iTotalNums = 30;
+    for (int iTaskNums = 0; iTaskNums < iTotalNums; ++iTaskNums)
     {
         std::shared_ptr<TestTask> task = std::shared_ptr<TestTask>(new TestTask());
-        task->SetThreadManager(m_pThreadManager);
         m_pThreadManager->add(task, 0LL, 0LL);
+        task->SetThreadManager(m_pThreadManager.get());
     }
-    std::cout << "task nums: " << 100 << " , add all task, cur time: " << GetTimeCurMs() << std::endl;
+    std::cout << "task nums: " << iTotalNums << " , add all task, cur time: " << GetTimeCurMs() << std::endl;
 }
 
 //
@@ -97,7 +108,7 @@ void TestTask::run()
     m_atomicIndex ++;
     std::cout << "index nums: " << m_atomicIndex 
               << ", cur thread id: " << thread()->get_current() 
-              //<< ", has surplus task nums: " << m_pThreadManager->totalTaskCount()
+              << ", has surplus task nums: " << m_pthreadManager->totalTaskCount()
               << ", cur time: " << GetTimeCurMs() << std::endl;
     sleep(1);
 }
@@ -108,6 +119,12 @@ int main()
     setbuf(stdout,NULL);
     Test test;
     test.DispatchTask();
+    usleep(100);
+    std::cout << "begin to stop all stop" << std::endl;
+    test.StopAllTask();
+
+    sleep(3);
+    std::cout << "at last task nums: " << test.GetTotalTaskCount() << std::endl;
     return 0;
 }
 

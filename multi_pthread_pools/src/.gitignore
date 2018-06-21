@@ -4,3 +4,4 @@ concurrency/*.so
 concurrency/*.a
 test/*.o
 test/TestMain
+tags
