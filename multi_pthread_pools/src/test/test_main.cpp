@@ -23,13 +23,15 @@ static int64_t GetTimeCurMs()
 class TestTask: public Runnable 
 {
  public:
-  TestTask() {}
+  TestTask(int iIndex): m_iIndex(iIndex) {}
   virtual void run();
+  int GetIndex() const { return m_iIndex; }
   void SetThreadManager(ThreadManager* threadManager) 
   {
       m_pthreadManager = threadManager;
   }
  private:
+  int m_iIndex;
   ThreadManager* m_pthreadManager;
 
 };
@@ -95,7 +97,7 @@ void Test::DispatchTask()
     int iTotalNums = 30;
     for (int iTaskNums = 0; iTaskNums < iTotalNums; ++iTaskNums)
     {
-        std::shared_ptr<TestTask> task = std::shared_ptr<TestTask>(new TestTask());
+        std::shared_ptr<TestTask> task = std::shared_ptr<TestTask>(new TestTask( iTaskNums ));
         m_pThreadManager->add(task, 0LL, 0LL);
         task->SetThreadManager(m_pThreadManager.get());
     }
@@ -107,8 +109,9 @@ void TestTask::run()
 {
     m_atomicIndex ++;
     std::cout << "index nums: " << m_atomicIndex 
+              << ", cur content: " << GetIndex()
               << ", cur thread id: " << thread()->get_current() 
-              << ", has surplus task nums: " << m_pthreadManager->totalTaskCount()
+              << ", has surplus task nums: " << m_pthreadManager->pendingTaskCount()
               << ", cur time: " << GetTimeCurMs() << std::endl;
     sleep(1);
 }
