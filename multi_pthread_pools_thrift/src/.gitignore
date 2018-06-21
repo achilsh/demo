@@ -1,0 +1,6 @@
+concurrency/*.o
+concurrency/tags
+concurrency/*.so
+concurrency/*.a
+test/*.o
+test/TestMain

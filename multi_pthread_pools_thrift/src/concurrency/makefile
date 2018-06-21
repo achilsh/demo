@@ -1,8 +1,8 @@
-CCACHE_B=./ccache
+CCACHE_B=../ccache
 CC = $(shell command -v $(CCACHE_B) >/dev/null 2>&1 && echo "$(CCACHE_B) gcc" || echo "gcc")
 CXX = $(shell command -v $(CCACHE_B) >/dev/null 2>&1 && echo "$(CCACHE_B) g++" || echo "g++")
-CFLAG = -Wall -Wno-format -g -O2 -fPIC 
-CXXFLAG = -Wall -Wno-format -g -O2 -fPIC -std=c++11  -DHAVE_SYS_TIME_H -DHAVE_SCHED_GET_PRIORITY_MIN -DHAVE_SCHED_GET_PRIORITY_MAX
+CFLAG = -Wall -Wno-format -g -O0 -fPIC 
+CXXFLAG = -Wall -Wno-format -g -O0 -fPIC -std=c++11  -DHAVE_SYS_TIME_H
 
 ARCH:=$(shell uname -m)
 
@@ -37,7 +37,7 @@ OBJS = $(patsubst %.cpp,%.o,$(CPP_SRCS)) $(patsubst %.cc,%.o,$(CC_SRCS)) $(patsu
 
 all:  Ls 
 Ls: $(OBJS)
-	$(CXX) -shared -Wl,-soname -o libMultiThreadPools.so $(OBJS) -lc -lrt -ldl $(LDFLAGS)
+	#$(CXX) -shared -Wl,-soname -o libMultiThreadPools.so $(OBJS) -lc -lrt -ldl $(LDFLAGS)
 	ar -crv libMultiThreadPools.a $(OBJS)
 	ranlib libMultiThreadPools.a
 

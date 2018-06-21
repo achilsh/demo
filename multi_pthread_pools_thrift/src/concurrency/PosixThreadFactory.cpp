@@ -26,7 +26,8 @@
 #if GOOGLE_PERFTOOLS_REGISTER_THREAD
 #include <google/profiler.h>
 #endif
-
+#include <errno.h>
+#include <string.h>
 #include <assert.h>
 #include <pthread.h>
 
@@ -149,8 +150,11 @@ public:
     sched_param.sched_priority = priority_;
 
     // Set thread priority
-    if (pthread_attr_setschedparam(&thread_attr, &sched_param) != 0) {
-      throw SystemResourceException("pthread_attr_setschedparam failed");
+    int iRetSched =  pthread_attr_setschedparam(&thread_attr, &sched_param); 
+    if ( iRetSched != 0) {
+        std::string strErrMsg = strerror(errno); 
+        std::cout << "errmsg: " << strErrMsg << std::endl;
+        throw SystemResourceException("pthread_attr_setschedparam failed");
     }
 
     // Create reference
