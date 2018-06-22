@@ -3,5 +3,6 @@ concurrency/tags
 concurrency/*.so
 concurrency/*.a
 test/*.o
-test/TestMain
+test/TestThreadPoolMain
+test/TestTimerMain
 tags
